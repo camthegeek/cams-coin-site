@@ -17,17 +17,18 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right main-nav">
-					<li><a href="#home">{{ site.data.langs[page.lang].navigation.home }}</a></li>
-					<li><a href="#about">{{ site.data.langs[page.lang].navigation.about }}</a></li>
-					<li><a href="#roadmap">{{ site.data.langs[page.lang].navigation.roadmap }}</a></li>
-					<li><a href="#team">{{ site.data.langs[page.lang].navigation.team }}</a></li>
-					<li><a href="#downloads">{{ site.data.langs[page.lang].navigation.downloads }}</a></li>
-					<li><a href="#resources">{{ site.data.langs[page.lang].navigation.resources }}</a></li>
+					<li><a href="#home">{{ site.data[page.lang].site.navigation.home }}</a></li>
+					<li><a href="#about">{{ site.data[page.lang].site.navigation.about }}</a></li>
+					<li><a href="#roadmap">{{ site.data[page.lang].site.navigation.roadmap }}</a></li>
+					<li><a href="#team">{{ site.data[page.lang].site.navigation.team }}</a></li>
+					<li><a href="#downloads">{{ site.data[page.lang].site.navigation.downloads }}</a></li>
+					<li><a href="#resources">{{ site.data[page.lang].site.navigation.resources }}</a></li>
 					<li>
 						<div class="lang-dropdown">
-							<button class="langbtn"> {{ site.data.langs[page.lang].navigation.language }} <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
+							<button class="langbtn"> {{ site.data[page.lang].site.navigation.language }} <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
 							<div class="lang-dropdown-child">
 								<a href="/">English</a>
+								<a href="/es">Spanish</a>
 							</div>
 						</div>
 					</li>

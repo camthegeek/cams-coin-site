@@ -3,3 +3,7 @@ description:
 markdown: kramdown
 url: ""
 baseurl: ""
+
+index:
+  en: index
+  es: es

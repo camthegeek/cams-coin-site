@@ -1,0 +1,10 @@
+name: "test person"
+role: "jack of all trades"
+image: "5.jpg"
+social:
+  linkedin: "nope" 
+  twitter: 
+  github: "camthegeek"
+  facebook: 
+order: 5
+date: 2018-04-04 00:00:00

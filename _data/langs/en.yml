@@ -7,3 +7,12 @@ meta:
 banner:
   line1: "Bitcoin can be traced back to you."
   typewriter: "Masari keeps your funds secure and untraceable."
+
+navigation:
+  home: "Home"
+  about: "About"
+  roadmap: "Roadmap"
+  team: "Team"
+  downloads: "Downloads"
+  resources: "Resources"
+  language: "Language"

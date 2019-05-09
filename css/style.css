@@ -994,3 +994,25 @@ footer .social-footer li:hover a {
     font-size: 3rem;
     color: #658289;
 }
+
+.langbtn {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.lang-dropdown-child {
+    display: none;
+}
+.lang-dropdown-child a {
+    text-decoration: none;
+    display: block;
+}
+.show-child {
+    position: absolute;
+    display: block;
+    background: white;
+}

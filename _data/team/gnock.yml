@@ -1,4 +1,4 @@
-name: "gnick"
+name: "gnock"
 role: "Wallet(s) developer"
 image: "4.png"
 social:
@@ -6,4 +6,3 @@ social:
   twitter: "gnock"
   github: "gnock"
   facebook: "gnock"
-sort_order: "4"

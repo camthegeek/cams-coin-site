@@ -94,8 +94,10 @@ lang: en
 				<h4 class="light muted">A band of misfits with a common goal</h4>
 			</div>
 			<div class="row">
-				{% for teammate in site.data.team %}
-				{% assign member = teammate[1] %}
+				{% for order in (1..20) %}
+					{% for teammate in site.data.team %}
+					{% assign member = teammate[1] %}
+						{% if member.order == order %}
 				<div class="col-md-4">
 					<div class="team text-center">
 						<img src="img/team/{{ member.image }}" alt="Team Image" class="avatar">
@@ -114,6 +116,8 @@ lang: en
 						{% endif %}
 					</div>
 				</div>
+				{% endif %}
+				{%endfor%}
 				{%endfor%}
 			</div>
 		</div>

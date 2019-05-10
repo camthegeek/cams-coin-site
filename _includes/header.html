@@ -3,7 +3,6 @@
 	</div>
 	<nav class="navbar">
 		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
@@ -14,18 +13,17 @@
 				<a class="navbar-brand" href="#"><img class="navbar-logo" src="/img/logo.png" data-active-url="/img/logo.png" alt=""></a>
 				<span class="navbar-logo-text">masari</span>
 			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right main-nav">
-					<li><a href="#home">{{ site.data[page.lang].site.navigation.home }}</a></li>
-					<li><a href="#about">{{ site.data[page.lang].site.navigation.about }}</a></li>
-					<li><a href="#roadmap">{{ site.data[page.lang].site.navigation.roadmap }}</a></li>
-					<li><a href="#team">{{ site.data[page.lang].site.navigation.team }}</a></li>
-					<li><a href="#downloads">{{ site.data[page.lang].site.navigation.downloads }}</a></li>
-					<li><a href="#resources">{{ site.data[page.lang].site.navigation.resources }}</a></li>
+					<li><a href="#home">{% t navigation.home %}</a></li>
+					<li><a href="#about">{% t navigation.about %}</a></li>
+					<li><a href="#roadmap">{% t navigation.roadmap %}</a></li>
+					<li><a href="#team">{% t navigation.team %}</a></li>
+					<li><a href="#downloads">{% t navigation.downloads %}</a></li>
+					<li><a href="#resources">{% t navigation.resources %}</a></li>
 					<li>
 						<div class="lang-dropdown">
-							<button class="langbtn"> {{ site.data[page.lang].site.navigation.language }} <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
+							<button class="langbtn"> {% t navigation.language %} <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
 							<div class="lang-dropdown-child">
 								<a href="/">English</a>
 								<a href="/es">Spanish</a>
@@ -34,7 +32,5 @@
 					</li>
 				</ul>
 			</div>
-			<!-- /.navbar-collapse -->
 		</div>
-		<!-- /.container-fluid -->
 	</nav>

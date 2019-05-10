@@ -4,6 +4,9 @@ markdown: kramdown
 url: ""
 baseurl: ""
 
-index:
-  en: index
-  es: es
+plugins:
+ - jekyll-multiple-languages-plugin
+
+languages: ["en", "es"]
+
+exclude_from_localizations: ["js", "img", "css", "fonts", "CNAME"]

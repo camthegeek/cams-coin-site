@@ -11,8 +11,8 @@ lang: en
 			<div class="header-text">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h3 class="light white">{{ site.data[page.lang].site.banner.line1 }}</h3>
-						<h1 class="white typed">{{ site.data[page.lang].site.banner.typewriter }}</h1>
+						<h3 class="light white">{% t banner.line1 %}</h3>
+						<h1 class="white typed">{% t banner.typewriter %}</h1>
 						<span class="typed-cursor">|</span>
 					</div>
 				</div>
@@ -23,10 +23,10 @@ lang: en
 <section id="about" class="section section-padded">
 	<div class="container">
 		<div class="row text-center title">
-			<h2>{{ site.data[page.lang].site.sections.about.heading }}</h2>
-			<p> {{ site.data[page.lang].site.sections.about.paragraphs.line1 }}</p>
-			<p> {{ site.data[page.lang].site.sections.about.paragraphs.line2 }}</p>
-			<p> {{ site.data[page.lang].site.sections.about.paragraphs.line3 }}</p>
+			<h2>{% t sections.about.heading %}</h2>
+			<p> {% t sections.about.paragraphs.line1 %}</p>
+			<p> {% t sections.about.paragraphs.line2 %}</p>
+			<p> {% t sections.about.paragraphs.line3 %}</p>
 		</div>
 		<div class="row">
 			<div class="col-md-4">
@@ -34,8 +34,8 @@ lang: en
 					<div class="icon-holder">
 						<img src="img/scalable.png" alt="" class="icon">
 					</div>
-					<h4 class="heading">{{ site.data[page.lang].site.sections.about.images.block1.heading }}</h4>
-					<p class="description">{{ site.data[page.lang].site.sections.about.images.block1.text }}</p>
+					<h4 class="heading">{% t sections.about.images.block1.heading %}</h4>
+					<p class="description">{% t sections.about.images.block1.text %}</p>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -43,8 +43,8 @@ lang: en
 					<div class="icon-holder">
 						<img src="img/community.png" alt="" class="icon">
 					</div>
-					<h4 class="heading">{{ site.data[page.lang].site.sections.about.images.block2.heading }}</h4>
-					<p class="description">{{ site.data[page.lang].site.sections.about.images.block2.text }}</p>
+					<h4 class="heading">{% t sections.about.images.block2.heading %}</h4>
+					<p class="description">{% t sections..about.images.block2.text %}</p>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -52,8 +52,8 @@ lang: en
 					<div class="icon-holder">
 						<img src="img/simple.png" alt="" class="icon">
 					</div>
-					<h4 class="heading">{{ site.data[page.lang].site.sections.about.images.block3.heading }}</h4>
-					<p class="description">{{ site.data[page.lang].site.sections.about.images.block3.text }}</p>
+					<h4 class="heading">{% t sections.about.images.block3.heading %}</h4>
+					<p class="description">{% t sections.about.images.block3.text %}</p>
 				</div>
 			</div>
 		</div>
@@ -63,8 +63,8 @@ lang: en
 <section id="roadmap" class="section section-padded">
 	<div class="container">
 		<div class="row text-center title">
-			<h2>{{ site.data[page.lang].site.sections.roadmap.heading }}</h2>
-			<h4 class="light muted">{{ site.data[page.lang].site.sections.roadmap.paragraph }}</h4>
+			<h2>{% t sections.roadmap.heading %}</h2>
+			<h4 class="light muted">{% t sections.roadmap.paragraph %}</h4>
 		</div>
 		<div class="row">
 			<div class="col-md-12">

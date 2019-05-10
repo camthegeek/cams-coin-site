@@ -4,12 +4,12 @@ ref: index
 lang: en
 ---
 
-<!-- this area contains all the sections --> 
+<!-- banner -->
 <header id="home">
 	<div class="container">
 		<div class="table">
 			<div class="header-text">
-				<div class="row">
+				<div class="flex-row">
 					<div class="col-md-12 text-center">
 						<h3 class="light white">{% t banner.line1 %}</h3>
 						<h1 class="white typed">{% t banner.typewriter %}</h1>
@@ -20,19 +20,20 @@ lang: en
 		</div>
 	</div>
 </header>
-<section id="about" class="section section-padded">
+<!-- about -->
+<section id="about" class="section section-padded gray-bg">
 	<div class="container">
-		<div class="row text-center title">
+		<div class="flex-row text-center title">
 			<h2>{% t sections.about.heading %}</h2>
-			<p> {% t sections.about.paragraphs.line1 %}</p>
-			<p> {% t sections.about.paragraphs.line2 %}</p>
-			<p> {% t sections.about.paragraphs.line3 %}</p>
+			<p class="text-left"> {% t sections.about.paragraphs.line1 %}</p>
+			<p class="text-left"> {% t sections.about.paragraphs.line2 %}</p>
+			<p class="text-left"> {% t sections.about.paragraphs.line3 %}</p>
 		</div>
 		<div class="row">
 			<div class="col-md-4">
 				<div class="service">
 					<div class="icon-holder">
-						<img src="img/scalable.png" alt="" class="icon">
+						<img src="/img/scalable.png" alt="" class="icon">
 					</div>
 					<h4 class="heading">{% t sections.about.images.block1.heading %}</h4>
 					<p class="description">{% t sections.about.images.block1.text %}</p>
@@ -41,16 +42,16 @@ lang: en
 			<div class="col-md-4">
 				<div class="service">
 					<div class="icon-holder">
-						<img src="img/community.png" alt="" class="icon">
+						<img src="/img/community.png" alt="" class="icon">
 					</div>
 					<h4 class="heading">{% t sections.about.images.block2.heading %}</h4>
-					<p class="description">{% t sections..about.images.block2.text %}</p>
+					<p class="description">{% t sections.about.images.block2.text %}</p>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="service">
 					<div class="icon-holder">
-						<img src="img/simple.png" alt="" class="icon">
+						<img src="/img/simple.png" alt="" class="icon">
 					</div>
 					<h4 class="heading">{% t sections.about.images.block3.heading %}</h4>
 					<p class="description">{% t sections.about.images.block3.text %}</p>
@@ -60,16 +61,18 @@ lang: en
 	</div>
 	<div class="cut cut-bottom"></div>
 </section>
+<!-- roadmap -->
 <section id="roadmap" class="section section-padded">
+	<div class="cut cut-top"></div>
 	<div class="container">
-		<div class="row text-center title">
-			<h2>{% t sections.roadmap.heading %}</h2>
-			<h4 class="light muted">{% t sections.roadmap.paragraph %}</h4>
+		<div class="flex-row text-center title">
+			<h2 class="centered">{% t sections.roadmap.heading %}</h2>
+			<p class="light muted">{% t sections.roadmap.paragraph %}</p>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="timeline">
-					{% for order in (1..20) %}
+					{% for order in (1..30) %}
 					{% for goal in site.data[page.lang].roadmap %}
 					{% assign wingman = goal[1] %}
 					{% if wingman.order == order %}
@@ -78,13 +81,13 @@ lang: en
 							{% if wingman.year %}
 							<p class="timeline-date">
 								{% if wingman.quarter %}
-									Q{{ wingman.quarter }}
+								Q{{ wingman.quarter }}
 								{% endif %}
 								{{ wingman.year }}</p>
 								{%endif%}
-							<h2>{{ wingman.title }}</h2> 
-							{% if wingman.complete == "true" %}<span style="color: #4cb85f; display: inline-block;"><i class="fa fa-check" aria-hidden="true"></i></span>{% endif %}
-							<p> {{ wingman.desc }} </p>
+								<h2>{{ wingman.title }}</h2> 
+								{% if wingman.complete == "true" %}<span style="color: #4cb85f; display: inline-block;"><i class="fa fa-check" aria-hidden="true"></i></span>{% endif %}
+								<p> {{ wingman.desc }} </p>
 						</div>
 					</div>
 					{% endif %}
@@ -96,20 +99,21 @@ lang: en
 	</div>
 	<div class="cut cut-bottom"></div>
 </section>
+<!-- team -->
 <section id="team" class="section gray-bg">
 	<div class="container">
-		<div class="row title text-center">
-			<h2 class="margin-top">{{ site.data[page.lang].site.sections.team.heading }}</h2>
-			<h4 class="light muted">{{ site.data[page.lang].site.sections.team.paragraph }}</h4>
+		<div class="flex-row title text-center">
+			<h2 class="centered">{% t sections.team.heading %}</h2>
+			<p class="light muted">{% t sections.team.paragraph %}</p>
 		</div>
 		<div class="row">
-			{% for order in (1..20) %}
+			{% for order in (1..12) %}
 			{% for teammate in site.data[page.lang].team %}
 			{% assign member = teammate[1] %}
 			{% if member.order == order %}
 			<div class="col-md-4">
 				<div class="team text-center">
-					<img src="img/team/{{ member.image }}" alt="Team Image" class="avatar">
+					<img src="/img/team/{{ member.image }}" alt="Team Image" class="avatar">
 					<div class="title">
 						<h4>{{ member.name }}</h4>
 						<h5 class="muted regular">{{ member.role }}</h5>
@@ -131,36 +135,66 @@ lang: en
 		</div>
 	</div>
 </section>
-<section id="downloads" class="section section-padded">
+<!-- resources -->
+<section id="resources" class="section section-padded">
+	<div class="cut cut-top"></div>
 	<div class="container">
-		<div class="row text-center title">
-			<h2>Downloads</h2>
-			<h4 class="light muted">Release file area</h4>
+		<div class="flex-row text-center title">
+			<h2 class="centered">Resources</h2>
+			<p class="light muted">Links and junk</p>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			BLOCK EXPLORER <BR/>
+			WEB WALLET <BR/>
+			WALLET GENERATOR<BR/> 
+			MINING POOLS</BR>
+		</div>
+	</div>
+	<div class="cut cut-bottom"></div>
+</section>
+<!-- downloads -->
+<section id="downloads" class="section section-padded gray-bg">
+	<div class="container">
+		<div class="flex-row text-center title">
+			<h2 class="centered">Downloads</h2>
+			<p class="light muted">Release file area</p>
+		</div>
+		<div class="row  centered">
+			<div class="col-md-6">
+				<div class="service">
 				Windows
+				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<div class="service">
 					Linux
 				</div>
-				<div class="col-md-4">
-					<div class="service">
-						Mac
-					</div>
+			</div>
+			<div class="col-md-6">
+				<div class="service">
+					Mac
 				</div>
 			</div>
-			<div class="cut cut-bottom"></div>
-		</section>
-		<section id="resources" class="section section-padded">
-			<div class="container">
-				<div class="row text-center title">
-					<h2>Resources</h2>
-					<h4 class="light muted">Links and junk</h4>
-				</div>
-				<div class="row">
+			<div class="col-md-6">
+				<div class="service">
+					Android
 				</div>
 			</div>
-			<div class="cut cut-bottom"></div>
-		</section>
+		</div>
+</section>
+<!-- research -->
+<section id="research" class="section section-padded">
+	<div class="cut cut-top"></div>
+	<div class="container">
+		<div class="flex-row text-center title">
+			<h2 class="centered">Research</h2>
+			<p class="light muted">The Masari Research Corner researches innovation in privacy and cryptocurrency technology within the context of advancing Masari's protocol</p>
+		</div>
+		<div class="row centered">
+			<div class="col-md-12">
+				<div class="service">
+				Research items here.
+				</div>
+			</div>
+		</div>
+</section>

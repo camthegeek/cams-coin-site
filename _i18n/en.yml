@@ -15,6 +15,7 @@ navigation:
   team: "Team"
   downloads: "Downloads"
   resources: "Resources"
+  research: "Research"
   language: "Language"
 
 sections:
@@ -40,3 +41,7 @@ sections:
   team:
     heading: "Team"
     paragraph: "These are the myserious figures behind great technology."
+
+languages:
+  en: "English"
+  es: "Español"

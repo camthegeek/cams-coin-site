@@ -9,4 +9,4 @@ plugins:
 
 languages: ["en", "es"]
 
-exclude_from_localizations: ["js", "img", "css", "fonts", "CNAME"]
+exclude_from_localizations: ["js", "img", "css", "fonts", "CNAME","scripts"]

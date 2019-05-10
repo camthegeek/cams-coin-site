@@ -5,21 +5,22 @@ meta:
   keywords: "masari, monero, crypto, cryptocurrency, blockchain, private money, hidden cash"
 
 banner:
-  line1: "This is the Spanish version."
-  typewriter: "Masari keeps your funds secure and untraceable."
+  line1: "Bitcoin puede ser remontado a usted."
+  typewriter: "Masari mantiene sus fondos seguros y no se puede rastrear."
 
 navigation:
-  home: "Home"
-  about: "About"
+  home: "Casa"
+  about: "Sobre"
   roadmap: "Roadmap"
-  team: "Team"
-  downloads: "Downloads"
-  resources: "Resources"
+  team: "Equipo"
+  downloads: "Descargar"
+  resources: "Recursos"
+  research: "Research"
   language: "Idioma"
 
 sections:
   about:
-    heading: "About"
+    heading: "Sobre"
     paragraphs:
       line1: "Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured against any adversary. Using a cryptographically sound protocol, Masari ensures that all your transactions are private by default."
       line2: "By using the RingCT protocol, Masari is able to ensure that all transactions are untraceable, unlinkable, and that amounts transferred are hidden from the public."
@@ -38,5 +39,9 @@ sections:
     heading: "Roadmap"
     paragraph: "Text goes in the language file"
   team:
-    heading: "Team"
+    heading: "Equipo"
     paragraph: "These are the myserious figures behind great technology."
+
+languages:
+  en: "Inglés"
+  es: "Español"

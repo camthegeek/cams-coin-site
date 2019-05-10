@@ -1,32 +1,29 @@
 <div class="preloader">
 		<img src="/img/loader.gif" alt="Preloader image">
 	</div>
-	<nav class="navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><img class="navbar-logo" src="/img/logo.png" data-active-url="/img/logo.png" alt=""></a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        		Menu
+        		<i class="fa fa-bars"></i>
+      			</button>
+				<a class="navbar-brand js-scroll-trigger" href="#"><img class="navbar-logo" src="/img/logo.png" data-active-url="/img/logo.png" alt=""></a>
 				<span class="navbar-logo-text">masari</span>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right main-nav">
-					<li><a href="#home">{% t navigation.home %}</a></li>
-					<li><a href="#about">{% t navigation.about %}</a></li>
-					<li><a href="#roadmap">{% t navigation.roadmap %}</a></li>
-					<li><a href="#team">{% t navigation.team %}</a></li>
-					<li><a href="#downloads">{% t navigation.downloads %}</a></li>
-					<li><a href="#resources">{% t navigation.resources %}</a></li>
-					<li>
+			 <div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="#home">{% t navigation.home %}</a></li>
+					<li class="nav-item"><a href="#about">{% t navigation.about %}</a></li>
+					<li class="nav-item"><a href="#roadmap">{% t navigation.roadmap %}</a></li>
+					<li class="nav-item"><a href="#team">{% t navigation.team %}</a></li>
+					<li class="nav-item"><a href="#resources">{% t navigation.resources %}</a></li>
+					<li class="nav-item"><a href="#downloads">{% t navigation.downloads %}</a></li>
+					<li class="nav-item"><a href="#research">{% t navigation.research %}</a></li>
+					<li class="nav-item">
 						<div class="lang-dropdown">
 							<button class="langbtn"> {% t navigation.language %} <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
 							<div class="lang-dropdown-child">
-								<a href="/">English</a>
-								<a href="/es">Spanish</a>
+								<a href="/">{% t language.en %}</a>
+								<a href="/es">{% t language.es %}</a>
 							</div>
 						</div>
 					</li>

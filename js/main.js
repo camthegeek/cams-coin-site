@@ -2,13 +2,11 @@ jQuery(function($) {
 	"use strict";
 	// Author Code Here
 
-	var owlPricing;
 	var ratio = 2;
 
 	// Window Load
-	$(window).load(function() {
+	$(window).on('load', (function() {
 		// Preloader
-		$('.intro-tables, .parallax, header').css('opacity', '0');
 		$('.preloader').addClass('animated fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 			$('.preloader').hide();
 			$('.parallax, header').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -29,20 +27,6 @@ jQuery(function($) {
 				$(this).css('border-right-width', $(this).parent().width() + "px");
 			else if ($(this).hasClass('cut-bottom'))
 				$(this).css('border-left-width', $(this).parent().width() + "px");
-		});
-
-		// Sliders Init
-		$('.owl-schedule').owlCarousel({
-			singleItem: true,
-			pagination: true
-		});
-		$('.owl-testimonials').owlCarousel({
-			singleItem: true,
-			pagination: true
-		});
-		$('.owl-twitter').owlCarousel({
-			singleItem: true,
-			pagination: true
 		});
 
 		// Navbar Init
@@ -74,7 +58,7 @@ jQuery(function($) {
 			scrollSpeed: 400,
 			filter: ':not(.btn)'
 		});
-	});
+	}));
 	// Window Scroll
 	function onScroll() {
 		if ($(window).scrollTop() > 50) {

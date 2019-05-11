@@ -1160,7 +1160,6 @@ footer h3 {
 
 .downloads {
 	width: 100%;
-	height: 250px;
 	margin: 20px 0;
 	text-align: center;
 	border: 1px solid #ddd;
@@ -1177,4 +1176,21 @@ footer h3 {
 	-webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.abstract {
+	width: 100%;
+	margin: 20px 0;
+	text-align: left;
+	border: 1px solid #ddd;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	background: #fff;
+	padding: 1rem;
+}
+	.abstract h4 {
+		text-align:center;
+	}
+.abstract:hover { 
+	border-color: #4cb860;
 }

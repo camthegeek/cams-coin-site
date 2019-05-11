@@ -4,9 +4,11 @@ releases:
 - type: "GUI"
   version: "0.3.0.0"
   codename: "Dandy Dromedary"
-  url: "https://github.com/masari-project/masari-wallet-gui/releases/download/v0.3.0.0/masari-wallet-gui-win-x64-v0.3.0.0.zip"
+  url: "https://github.com/masari-project/masari-wallet-gui/releases/download/v0.3.0.0/masari-wallet-gui-mac-x64-v0.3.0.0.tar.gz"
+  sha256: "d9c817261437eca6102acc4cab0ff5aa7492539f9d883c13dea945a5de74772e"
 
 - type: "CLI"
   version: "0.3.0.0"
   codename: "Dandy Dromedary"
-  url: "https://github.com/masari-project/masari/releases/download/v0.3.0.0/masari-win-x64-v0.3.0.0.zip"
+  url: "https://github.com/masari-project/masari/releases/download/v0.3.0.0/masari-mac-x64-v0.3.0.0.tar.gz"
+  sha256: "b907ca13f98c9e2ae857f1f80c64442983ac4331b4d6d4148c7e718c8464eb87"

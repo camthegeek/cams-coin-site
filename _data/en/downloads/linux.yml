@@ -4,4 +4,5 @@ releases:
 - type: "CLI"
   version: "0.3.0.0"
   codename: "Dandy Dromedary"
-  url: "https://github.com/masari-project/masari/releases/download/v0.3.0.0/masari-win-x64-v0.3.0.0.zip"
+  url: "https://github.com/masari-project/masari/releases/download/v0.3.0.0/masari-linux-x64-v0.3.0.0.tar.gz"
+  sha256: "7acc4cb2e318bc519866abb0c2264efe77aa02e2aecabb02efddf5b608681775"

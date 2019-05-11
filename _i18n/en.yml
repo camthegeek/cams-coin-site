@@ -37,11 +37,21 @@ sections:
         text: "Cross-platform supported and easy to use"
   roadmap:
     heading: "Roadmap"
-    paragraph: "Text goes in the language file"
+    paragraph: "This roadmap is community driven and subject to change, represents prior achievements (non-comprehensive) and estimated timelines for future plans."
   team:
     heading: "Team"
     paragraph: "These are the myserious figures behind great technology."
-
-languages:
+  research:
+    heading: "Research Corner"
+    paragraph: "The Masari Research Corner researches innovation in privacy and cryptocurrency technology within the context of advancing Masari's protocol"
+    abstract: "Abstract"
+  resources: 
+    heading: "Resources"
+    paragraph: "External resources that provide a type of utilization to Masari."
+  downloads: 
+    heading: "Downloads"
+    paragraph: "Release files and wallets from the Masari team"
+    version: "Current version"
+language:
   en: "English"
   es: "Español"

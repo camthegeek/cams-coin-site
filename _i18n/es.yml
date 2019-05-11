@@ -41,7 +41,17 @@ sections:
   team:
     heading: "Equipo"
     paragraph: "These are the myserious figures behind great technology."
-
-languages:
+  research:
+    heading: "Research Corner"
+    paragraph: "The Masari Research Corner researches innovation in privacy and cryptocurrency technology within the context of advancing Masari's protocol"
+    abstract: "Abstract"  
+  resources: 
+    heading: "Resources"
+    paragraph: "External resources that provide a type of utilization to Masari."
+  downloads: 
+    heading: "Downloads"
+    paragraph: "Release files and wallets from the Masari team"
+    version: "Current version"
+language:
   en: "Inglés"
   es: "Español"

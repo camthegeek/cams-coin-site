@@ -156,8 +156,8 @@ lang: en
 <section id="downloads" class="section section-padded gray-bg">
 	<div class="container">
 		<div class="flex-row text-center title">
-			<h2 class="centered">Downloads</h2>
-			<p class="light muted">Release file area</p>
+			<h2 class="centered">{% t sections.downloads.heading %}</h2>
+			<p class="light muted">{% t sections.downloads.paragraph %}</p>
 		</div>
 		<div class="row centered">
 			{% for os in site.data[page.lang].downloads %}
@@ -166,18 +166,26 @@ lang: en
 				<div class="downloads light-shadow">
 					<h2 class="centered">
 					<i class="fa fa-{{opsys.system | downcase}}"></i> 
-					{% if opsys.system contains "Apple" %} Mac {% else %} {{ opsys.system }} {%endif %} 
-					{% if opsys.arch %} {{opsys.arch}}-bit {% endif %}
+					{% if opsys.system contains "Apple" %} Mac {% else %} {{ opsys.system }} {% endif %} 
+					{% if opsys.arch %} {{ opsys.arch }}-bit {% endif %}
 					</h2>
 					{% for release in opsys.releases %}
 					{% if release.type contains "GUI" %}
-						<p><a href="{{ release.url }}" target="_blank">{{opsys.system}} Graphical User Interface (GUI)</a></p>
+						<p>
+							<a href="{{ release.url }}" target="_blank">{{ opsys.system }} Graphical User Interface (GUI)</a></p>						
+							<p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
+						</p>
+						Official SHA256 Hash: <pre>{{ release.sha256 }}</pre>
 					{% endif %}
 					{% if release.type contains "CLI" %}
-						<p><a href="{{ release.url }}" target="_blank">{{opsys.system}} Command Line Interface (CLI)</a></p>
+							<p><a href="{{ release.url }}" target="_blank">{{ opsys.system }} Command Line Interface (CLI)</a></p>
+							<p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
+						</p>
+						Official SHA256 Hash: <pre>{{ release.sha256 }}</pre>
 					{% endif %}
 					{% if release.type contains "Play" %}
-						<a href="{{ release.url }}" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width=50%></a>
+						<a href="{{ release.url }}" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width=50%></a><p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
+						</p>
 					{% endif %}
 				{% endfor %}
 				</div>
@@ -190,14 +198,26 @@ lang: en
 <section id="research" class="section section-padded">
 	<div class="container">
 		<div class="flex-row text-center title">
-			<h2 class="centered">Research</h2>
-			<p class="light muted">The Masari Research Corner researches innovation in privacy and cryptocurrency technology within the context of advancing Masari's protocol</p>
+			<h2 class="centered">{% t sections.research.heading %}</h2>
+			<p class="light muted">{% t sections.research.paragraph %}</p>
 		</div>
 		<div class="row centered">
 			<div class="col-md-12">
-				<div class="service">
-				Research items here.
+				{% for order in (1..10) %}
+				{% for research in site.data[page.lang].research %}
+				{% assign article = research[1] %}
+				{% if article.order == order %}
+				<div class="abstract light-shadow">
+				<h4>
+					<a href="{{ article.url }}" target="_blank">
+					{{ article.title }}
+					</a>
+				</h4>
+				<p>{% t sections.research.abstract %}: {{ article.abstract }}</p>
 				</div>
+				{%endif%}
+				{%endfor%}
+				{%endfor%}
 			</div>
 		</div>
 </section>

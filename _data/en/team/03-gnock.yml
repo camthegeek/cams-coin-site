@@ -1,10 +1,10 @@
 name: "gnock"
-role: "Wallet(s) developer"
+role: "Wallet Developer"
 image: "4.png"
 social:
   linkedin: 
-  twitter: "gnock"
+  twitter: 
   github: "gnock"
-  facebook: "gnock"
+  facebook: 
 order: 4
 date: 2018-04-04 00:00:00

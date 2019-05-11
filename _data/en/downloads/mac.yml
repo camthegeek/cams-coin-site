@@ -1,0 +1,12 @@
+system: "Apple"
+arch: "64"
+releases:
+- type: "GUI"
+  version: "0.3.0.0"
+  codename: "Dandy Dromedary"
+  url: "https://github.com/masari-project/masari-wallet-gui/releases/download/v0.3.0.0/masari-wallet-gui-win-x64-v0.3.0.0.zip"
+
+- type: "CLI"
+  version: "0.3.0.0"
+  codename: "Dandy Dromedary"
+  url: "https://github.com/masari-project/masari/releases/download/v0.3.0.0/masari-win-x64-v0.3.0.0.zip"

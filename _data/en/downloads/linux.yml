@@ -1,0 +1,7 @@
+system: "Linux"
+arch: "64"
+releases:
+- type: "CLI"
+  version: "0.3.0.0"
+  codename: "Dandy Dromedary"
+  url: "https://github.com/masari-project/masari/releases/download/v0.3.0.0/masari-win-x64-v0.3.0.0.zip"

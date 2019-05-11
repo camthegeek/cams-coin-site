@@ -62,30 +62,6 @@ h6 {
 	margin: 10px 0;
 }
 
-h1 {
-	font-size: 60px;
-}
-
-h2 {
-	font-size: 48px;
-}
-
-h3 {
-	font-size: 30px;
-}
-
-h4 {
-	font-size: 24px;
-}
-
-h5 {
-	font-size: 18px;
-}
-
-h6 {
-	font-size: 16px;
-}
-
 ul.white-list {
 	padding: 0;
 	list-style-type: none;
@@ -460,6 +436,7 @@ section {
 	border: 1px solid #ddd;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+	background: #fff;
 }
 
 .service .icon-holder {
@@ -991,10 +968,6 @@ footer .social-footer li:hover a {
 	height: 50px !important;
 }
 
-.text-center h1 {
-    font-size: 50px;
-}
-
 .navbar-logo-text { 
     font-size: 3rem;
     color: #658289;
@@ -1168,9 +1141,19 @@ footer .social-footer li:hover a {
 }
 
 footer h3 { 
-color: #fff;
+	color: #fff;
 }
+
 .navbar-nav > li { 
-float: none;
-display: inline-block;
+	float: none;
+	display: inline-block;
+	padding: 0px 10px;
+	font-size: 1rem;
+}
+
+.nav-item a {
+	color: #fff;
+}
+.nav-item a:hover {
+	text-decoration: none;
 }

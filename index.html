@@ -33,7 +33,7 @@ lang: en
 			<div class="col-md-4">
 				<div class="about light-shadow">
 					<div class="icon-holder">
-						<img src="/img/icons/scalable.png" alt="" class="icon">
+						<img src="/img/icons/scalable.png" alt="{% t seo.images.about.image1 %}" class="icon">
 					</div>
 					<h4 class="heading">{% t sections.about.images.block1.heading %}</h4>
 					<p class="description">{% t sections.about.images.block1.text %}</p>
@@ -42,7 +42,7 @@ lang: en
 			<div class="col-md-4">
 				<div class="about light-shadow">
 					<div class="icon-holder">
-						<img src="/img/icons/community.png" alt="" class="icon">
+						<img src="/img/icons/community.png" alt="{% t seo.images.about.image2 %}" class="icon">
 					</div>
 					<h4 class="heading">{% t sections.about.images.block2.heading %}</h4>
 					<p class="description">{% t sections.about.images.block2.text %}</p>
@@ -51,7 +51,7 @@ lang: en
 			<div class="col-md-4">
 				<div class="about light-shadow">
 					<div class="icon-holder">
-						<img src="/img/icons/simple.png" alt="" class="icon">
+						<img src="/img/icons/simple.png" alt="{% t seo.images.about.image3 %}" class="icon">
 					</div>
 					<h4 class="heading">{% t sections.about.images.block3.heading %}</h4>
 					<p class="description">{% t sections.about.images.block3.text %}</p>
@@ -113,7 +113,7 @@ lang: en
 			{% if member.order == order %}
 			<div class="col-md-4">
 				<div class="team text-center light-shadow">
-					<img src="/img/team/{{ member.image }}" alt="Team Image" class="avatar">
+					<img src="/img/team/{{ member.image }}" alt="{{ member.seo_desc }}" class="avatar">
 					<div class="title">
 						<h4>{{ member.name }}</h4>
 						<h5 class="muted regular">{{ member.role }}</h5>
@@ -144,7 +144,7 @@ lang: en
 			<p class="light muted">Links and junk</p>
 		</div>
 		<div class="row">
-			BLOCK EXPLORER <BR/>
+			BLOCK EXPLORER - soon.<BR/>
 			WEB WALLET <BR/>
 			WALLET GENERATOR<BR/> 
 			MINING POOLS</BR>
@@ -184,7 +184,7 @@ lang: en
 						Official SHA256 Hash: <pre>{{ release.sha256 }}</pre>
 					{% endif %}
 					{% if release.type contains "Play" %}
-						<a href="{{ release.url }}" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width=50%></a><p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
+						<a href="{{ release.url }}" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width=50% alt="{% t seo.images.android %}"></a><p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
 						</p>
 					{% endif %}
 				{% endfor %}

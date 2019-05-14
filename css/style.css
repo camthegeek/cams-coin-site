@@ -237,7 +237,7 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 }
 
 .navbar {
-	top: 50px;
+	padding-top: 50px;
 }
 
 .container {
@@ -971,11 +971,22 @@ footer .social-footer li:hover a {
     font-size: 3rem;
     color: #658289;
 }
+.navbar-logo-text a:hover {
+	text-decoration: none;
+	color: #658289;
+}
+.navbar-logo-text a:active, a:visited {
+	text-decoration: none;
+	color: #658289;
+}
 
 .langbtn {
     border: none;
     cursor: pointer;
     display: inline-block;
+    padding: none;
+    background: none;
+    color: #fff;
 }
 .lang-dropdown {
     position: relative;
@@ -1192,4 +1203,34 @@ footer h3 {
 	}
 .abstract:hover { 
 	border-color: #4cb860;
+}
+
+#guides img {
+	max-width: 100%;
+}
+
+#top-area {
+	position: relative;
+	width: 100%;
+	color: white;
+	background: rgba(28, 36, 65, 0.93);
+	background: url('../img/header.jpg') center;
+	background-size: cover;
+	padding-top:20vh;
+}
+
+#top-area  .table {
+	display: table;
+	height: 100%;
+}
+
+#top-area  .container {
+	height: 100%;
+}
+
+#top-area  .header-text {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
 }

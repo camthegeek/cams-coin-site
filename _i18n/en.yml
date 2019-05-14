@@ -1,7 +1,7 @@
 web: 
-  title: "Masari - Private, fungible, scalable and secure cryptocurrency"
+  title: "Masari - Privacy centered cryptocurrency"
 meta:
-  desc: "Masari is a scalability-focused, untraceable, secure, and fungible cryptocurrency based on the cryptonote protocol. Our goal is to allow fast yet secure private transactions with low fees."
+  desc: "Masari is a scalability-focused, untraceable, and fungible cryptocurrency. Our goal is to allow fast yet secure private transactions with low fees."
   keywords: "masari, monero, crypto, cryptocurrency, blockchain, private money, hidden cash"
 
 banner:

@@ -1,12 +1,11 @@
-title: "Cams site yo"
-description:
 markdown: kramdown
-url: ""
-baseurl: ""
 
 plugins:
  - jekyll-multiple-languages-plugin
+ - jekyll-liquify
 
 languages: ["en", "es"]
 
 exclude_from_localizations: ["js", "img", "css", "fonts", "CNAME","scripts"]
+
+coin: "Masari"

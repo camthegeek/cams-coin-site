@@ -1,26 +1,27 @@
 web: 
-  title: "Masari - Private, fungible, scalable and secure cryptocurrency"
+  title: "Masari - Privacy centered cryptocurrency"
 meta:
-  desc: "Masari is a scalability-focused, untraceable, secure, and fungible cryptocurrency based on the cryptonote protocol. Our goal is to allow fast yet secure private transactions with low fees."
+  desc: "Masari is a scalability-focused, untraceable, and fungible cryptocurrency. Our goal is to allow fast yet secure private transactions with low fees."
   keywords: "masari, monero, crypto, cryptocurrency, blockchain, private money, hidden cash"
+  author: "Masari team"
 
 banner:
-  line1: "Bitcoin puede ser remontado a usted."
-  typewriter: "Masari mantiene sus fondos seguros y no se puede rastrear."
+  line1: "Bitcoin can be traced back to you."
+  typewriter: "Masari keeps your funds secure and untraceable."
 
 navigation:
-  home: "Casa"
-  about: "Sobre"
+  home: "Home"
+  about: "About"
   roadmap: "Roadmap"
-  team: "Equipo"
-  downloads: "Descargar"
-  resources: "Recursos"
+  team: "Team"
+  downloads: "Downloads"
+  resources: "Resources"
   research: "Research"
-  language: "Idioma"
+  language: "Language"
 
 sections:
   about:
-    heading: "Sobre"
+    heading: "About"
     paragraphs:
       line1: "Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured against any adversary. Using a cryptographically sound protocol, Masari ensures that all your transactions are private by default."
       line2: "By using the RingCT protocol, Masari is able to ensure that all transactions are untraceable, unlinkable, and that amounts transferred are hidden from the public."
@@ -37,14 +38,14 @@ sections:
         text: "Cross-platform supported and easy to use"
   roadmap:
     heading: "Roadmap"
-    paragraph: "Text goes in the language file"
+    paragraph: "This roadmap is community driven and subject to change, represents prior achievements (non-comprehensive) and estimated timelines for future plans."
   team:
-    heading: "Equipo"
+    heading: "Team"
     paragraph: "These are the myserious figures behind great technology."
   research:
     heading: "Research Corner"
     paragraph: "The Masari Research Corner researches innovation in privacy and cryptocurrency technology within the context of advancing Masari's protocol"
-    abstract: "Abstract"  
+    abstract: "Abstract"
   resources: 
     heading: "Resources"
     paragraph: "External resources that provide a type of utilization to Masari."
@@ -53,5 +54,19 @@ sections:
     paragraph: "Release files and wallets from the Masari team"
     version: "Current version"
 language:
-  en: "Inglés"
+  en: "English"
   es: "Español"
+
+
+seo:
+  images:
+    preloader: "Preloader image"
+    logo: "Masari Cryptocurrency"
+    android: "Use Masari on your mobile Android device. Download from the Play Store!"
+    about:
+      image1: "Masari, a scalable cryptocurrency"
+      image2: "Masari, community funded and developed cryptocurrency"
+      image3: "Masari, a simple privacy-centric cryptocurrency"
+  meta:
+    guide:
+      desc: "This is the meta description for the guides page."

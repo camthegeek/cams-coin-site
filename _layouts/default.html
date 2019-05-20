@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% t web.title %}</title>
-	<meta name="description" content="{% t meta.desc %}" />
-	<meta name="keywords" content="{% t meta.keywords %}" />
+	<title>{{ site.coin }} - {{ page.title | liquify }}</title>
+	<meta name="description" content="{% if page.description %}{{ page.description | liquify }}{% else %}{% t seo.main.desc %}{% endif %}">
+	<meta name="keywords" content="{% t seo.keywords %}" />
 	<meta name="google-site-verification" content="IJ9mTfeAp1TMjj7MNWUBBtjnLbdzoO2OkgUT-UwM3SU" />
-	<meta name="author" content="{% t meta.author %}" />
+	<meta name="author" content="{% t seo.author %}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">

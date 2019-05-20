@@ -1,10 +1,3 @@
-web: 
-  title: "Masari - Privacy centered cryptocurrency"
-meta:
-  desc: "Masari is a scalability-focused, untraceable, and fungible cryptocurrency. Our goal is to allow fast yet secure private transactions with low fees."
-  keywords: "masari, monero, crypto, cryptocurrency, blockchain, private money, hidden cash"
-  author: "Masari team"
-
 banner:
   line1: "Bitcoin can be traced back to you."
   typewriter: "Masari keeps your funds secure and untraceable."
@@ -59,6 +52,8 @@ language:
 
 
 seo:
+  keywords: "masari, monero, crypto, cryptocurrency, blockchain, private money, hidden cash"
+  author: "Masari team"
   images:
     preloader: "Preloader image"
     logo: "Masari Cryptocurrency"
@@ -67,3 +62,10 @@ seo:
       image1: "Masari, a scalable cryptocurrency"
       image2: "Masari, community funded and developed cryptocurrency"
       image3: "Masari, a simple privacy-centric cryptocurrency"
+  meta:
+    guide:
+      title: "User Guides"
+      desc: "This is the meta description for the guides page."
+    main:
+      title: "Privacy focused cryptocurrency"
+      desc: "Masari is a scalability-focused, untraceable, and fungible cryptocurrency. Our goal is to allow fast yet secure private transactions with low fees."

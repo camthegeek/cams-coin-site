@@ -159,7 +159,10 @@ $.ajax({
 	getVolume(v, function(res) {
 		$('.crex-usd').text('$'+res.toFixed(2));
 	});
-}
+},
+error: function( req, status, err ) {
+    console.log( 'something went wrong', status, err );
+  }
 })
 }
 

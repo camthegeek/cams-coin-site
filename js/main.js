@@ -110,7 +110,7 @@ jQuery(function($) {
 //	Language Dropdown
 // -------------------------------------------------------- 
 $(function() {
-	$('.langbtn').click(function(e){
+	$('body').on("click", ".langbtn", function(e){
     	$('.lang-dropdown-child').addClass('show-child');
     	e.stopPropagation();
 	})
@@ -118,3 +118,82 @@ $(function() {
     	$('.lang-dropdown-child').removeClass('show-child');
   	});
 });
+
+// --------------------------------------------------------
+//	Exchange Information
+// --------------------------------------------------------
+getOgre();
+getCrex();
+getSouthEx();
+getStex();
+setInterval(getOgre,3600000)
+function getOgre() { 
+var api = 'https://tradeogre.com/api/v1/ticker/btc-msr';
+$.ajax({
+	dataType: "json",
+	url: api,
+	headers: {"User-Agent": "uwu uwu uwu"},
+	success: function(resp) {
+	var v = resp.volume;
+	var b = resp.price;
+	$('.ogre-btc').text(b);
+	getVolume(v, function(res) {
+		$('.ogre-usd').text('$'+res.toFixed(2));
+	});
+}
+})
+}
+
+function getCrex() {
+var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
+$.getJSON(api, function (res) { 
+	console.log(res);
+	var v = res.volumeInBtc;
+	var b = res.last;
+	$('.crex-btc').text(b);
+	getVolume(v, function(res) {
+		console.log(res);
+		$('.crex-usd').text('$'+res.toFixed(2));
+	});
+})
+}
+
+function getSouthEx() {
+var api = 'https://www.southxchange.com/api/price/msr/btc';
+$.getJSON(api, function (res) { 
+	var v = res.Volume24Hr*res.Last;
+	var b = res.Last;
+	$('.southex-btc').text(b);
+	getVolume(v, function(res) {
+		$('.southex-usd').text('$'+res.toFixed(2));
+	});
+})
+}
+
+function getStex() {
+var api = 'https://api3.stex.com/public/ticker/51';
+$.ajax({
+	dataType: "json",
+	url: api,
+	headers: {"User-Agent": "uwu uwu uwu"},
+	success: function(resp) {
+		console.log('stex: ' +resp);
+	var v = resp.data.volume;
+	var b = resp.data.last;
+	$('.stex-btc').text(b);
+	getVolume(v, function(res) {
+		$('.stex-usd').text('$'+res.toFixed(2));
+	});
+}
+})
+}
+
+function getVolume(coin,callback) { 
+$.getJSON('https://api.coincap.io/v2/assets/bitcoin', function(btc) { 
+	//console.log(btc.data.priceUsd);
+	console.log(coin);
+	usd = btc.data.priceUsd;
+	callback(parseFloat(btc.data.priceUsd).toFixed(2)*coin);
+
+})
+}

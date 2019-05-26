@@ -984,7 +984,7 @@ footer .social-footer li:hover a {
     border: none;
     cursor: pointer;
     display: inline-block;
-    padding: none;
+    padding: 0;
     background: none;
     color: #fff;
 }
@@ -1003,6 +1003,19 @@ footer .social-footer li:hover a {
     position: absolute;
     display: block;
     background: white;
+    width: 100%;
+}
+.navbar-fixed-top .show-child {
+    position: absolute;
+    display: block;
+    background: white;
+    width: 100%;
+    z-index: 999999;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+.show-child a {
+    color: #4caf50 !important;
+    padding: 2px 0px 0px 4px;
 }
 .team-social {
 	font-size: 4rem;
@@ -1233,4 +1246,40 @@ footer h3 {
 	text-align: center;
 	vertical-align: middle;
 	color: white;
+}
+.resources {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #ddd;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.resources img {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    padding: 10px;
+    max-height: 100px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.resources:hover {
+    border-color: #4caf50;
+}
+.resources-con a:hover {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.navbar-fixed-top .langbtn {
+    color: #bbb;
+}
+.table th, .table td {
+	background: #ededed;
+
 }

@@ -132,7 +132,7 @@ var api = 'https://tradeogre.com/api/v1/ticker/btc-msr';
 $.ajax({
 	dataType: "json",
 	url: api,
-	headers: {"User-Agent": "uwu uwu uwu"},
+	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
 	var v = resp.volume;
 	var b = resp.price;
@@ -150,8 +150,9 @@ var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
 $.ajax({
 	dataType: "jsonp",
 	url: api,
-	headers: {"User-Agent": "uwu uwu uwu"},
+	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
+		console.log('crex: ' +resp);
 	var v = resp.volumeInBtc;
 	var b = resp.last;
 	$('.crex-btc').text(b);

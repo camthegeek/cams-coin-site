@@ -127,12 +127,14 @@ getCrex();
 getSouthEx();
 getStex();
 setInterval(getOgre,3600000)
+var proxy = 'https://cors-anywhere.herokuapp.com/';
+
 function getOgre() { 
 var api = 'https://tradeogre.com/api/v1/ticker/btc-msr';
 $.ajax({
 	dataType: "json",
-	url: api,
-	headers: {"User-Agent": "uwu uwu uwu"},
+	url: proxy + api,
+	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
 	var v = resp.volume;
 	var b = resp.price;
@@ -146,27 +148,43 @@ $.ajax({
 
 function getCrex() {
 var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
-$.getJSON(api, function (res) { 
-	console.log(res);
-	var v = res.volumeInBtc;
-	var b = res.last;
+
+$.ajax({
+	dataType: "json",
+	url: proxy + api,
+	headers: {"User-Agent": "uwu-uwu-uwu"},
+	success: function(resp) {
+		console.log('crex: ' +resp);
+		var resp = JSON.stringify(resp);
+	var v = resp.volumeInBtc;
+	var b = resp.last;
 	$('.crex-btc').text(b);
 	getVolume(v, function(res) {
-		console.log(res);
 		$('.crex-usd').text('$'+res.toFixed(2));
 	});
+},
+error: function( req, status, err ) {
+    console.log( 'something went wrong', status, err );
+  }
 })
 }
 
 function getSouthEx() {
-var api = 'https://www.southxchange.com/api/price/msr/btc';
-$.getJSON(api, function (res) { 
-	var v = res.Volume24Hr*res.Last;
-	var b = res.Last;
+	var api = 'https://www.southxchange.com/api/price/msr/btc';
+	$.ajax({
+	dataType: "json",
+	url: proxy + api,
+	headers: {"User-Agent": "uwu-uwu-uwu"},
+	success: function(resp) {
+	console.log('getSouthEx: ' +resp);
+
+	var v = resp.Volume24Hr*resp.Last;
+	var b = resp.Last;
 	$('.southex-btc').text(b);
 	getVolume(v, function(res) {
 		$('.southex-usd').text('$'+res.toFixed(2));
 	});
+}
 })
 }
 
@@ -174,7 +192,7 @@ function getStex() {
 var api = 'https://api3.stex.com/public/ticker/51';
 $.ajax({
 	dataType: "json",
-	url: api,
+	url: proxy + api,
 	headers: {"User-Agent": "uwu uwu uwu"},
 	success: function(resp) {
 		console.log('stex: ' +resp);
@@ -191,7 +209,7 @@ $.ajax({
 function getVolume(coin,callback) { 
 $.getJSON('https://api.coincap.io/v2/assets/bitcoin', function(btc) { 
 	//console.log(btc.data.priceUsd);
-	console.log(coin);
+	//console.log(coin);
 	usd = btc.data.priceUsd;
 	callback(parseFloat(btc.data.priceUsd).toFixed(2)*coin);
 

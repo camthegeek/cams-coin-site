@@ -146,15 +146,19 @@ $.ajax({
 
 function getCrex() {
 var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
-$.getJSON(api, function (res) { 
-	console.log(res);
-	var v = res.volumeInBtc;
-	var b = res.last;
+
+$.ajax({
+	dataType: "jsonp",
+	url: api,
+	headers: {"User-Agent": "uwu uwu uwu"},
+	success: function(resp) {
+	var v = resp.volumeInBtc;
+	var b = resp.last;
 	$('.crex-btc').text(b);
 	getVolume(v, function(res) {
-		console.log(res);
 		$('.crex-usd').text('$'+res.toFixed(2));
 	});
+}
 })
 }
 

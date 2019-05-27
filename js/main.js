@@ -128,11 +128,12 @@ getSouthEx();
 getStex();
 setInterval(getOgre,3600000)
 var proxy = 'https://cors-anywhere.herokuapp.com/';
+
 function getOgre() { 
 var api = 'https://tradeogre.com/api/v1/ticker/btc-msr';
 $.ajax({
 	dataType: "json",
-	url: proxy+api,
+	url: proxy + api,
 	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
 	var v = resp.volume;
@@ -149,11 +150,12 @@ function getCrex() {
 var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
 
 $.ajax({
-	dataType: "jsonp",
-	url: proxy+api,
+	dataType: "json",
+	url: proxy + api,
 	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
 		console.log('crex: ' +resp);
+		var resp = JSON.stringify(resp);
 	var v = resp.volumeInBtc;
 	var b = resp.last;
 	$('.crex-btc').text(b);
@@ -171,7 +173,7 @@ function getSouthEx() {
 	var api = 'https://www.southxchange.com/api/price/msr/btc';
 	$.ajax({
 	dataType: "json",
-	url: proxy+api,
+	url: proxy + api,
 	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
 	console.log('getSouthEx: ' +resp);
@@ -190,7 +192,7 @@ function getStex() {
 var api = 'https://api3.stex.com/public/ticker/51';
 $.ajax({
 	dataType: "json",
-	url: proxy+api,
+	url: proxy + api,
 	headers: {"User-Agent": "uwu uwu uwu"},
 	success: function(resp) {
 		console.log('stex: ' +resp);

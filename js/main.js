@@ -127,12 +127,9 @@ setTimeout(getCrex, 2000);
 setTimeout(getSouthEx, 2000);
 setTimeout(getStex, 2000);
 setInterval(getOgre,3600000)
-<<<<<<< HEAD
 setInterval(getCrex,3600000)
 setInterval(getSouthEx,3600000)
 setInterval(getStex,3600000)
-=======
->>>>>>> origin/master
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 
 function getOgre() { 
@@ -161,14 +158,8 @@ $.ajax({
 	headers: {"User-Agent": "uwu-uwu-uwu"},
 	success: function(resp) {
 		console.log('crex: ' +resp);
-<<<<<<< HEAD
 	var v = resp['0'].volumeInBtc;
 	var b = resp['0'].last;
-=======
-		var resp = JSON.stringify(resp);
-	var v = resp.volumeInBtc;
-	var b = resp.last;
->>>>>>> origin/master
 	$('.crex-btc').text(b);
 	getVolume(v, function(res) {
 		$('.crex-usd').text('$'+res.toFixed(2));

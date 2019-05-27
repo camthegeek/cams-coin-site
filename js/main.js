@@ -122,98 +122,99 @@ $(function() {
 // --------------------------------------------------------
 //	Exchange Information
 // --------------------------------------------------------
+// grab exchange info 2 seconds after site loads.
 setTimeout(getOgre, 2000);
 setTimeout(getCrex, 2000);
 setTimeout(getSouthEx, 2000);
 setTimeout(getStex, 2000);
+// call for fresh info after an hour.
 setInterval(getOgre,3600000)
-setInterval(getCrex,3600000)
-setInterval(getSouthEx,3600000)
-setInterval(getStex,3600000)
+setInterval(getCrex, 3600000)
+setInterval(getSouthEx, 3600000)
+setInterval(getStex, 3600000)
+
+// CORS proxy
+// may be rate limited
+// proxy can be set up somewhere else
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 
+// could probably consolidate these functions into one. this works too.
 function getOgre() { 
-var api = 'https://tradeogre.com/api/v1/ticker/btc-msr';
-$.ajax({
-	dataType: "json",
-	url: proxy + api,
-	headers: {"User-Agent": "uwu-uwu-uwu"},
-	success: function(resp) {
-	var v = resp.volume;
-	var b = resp.price;
-	$('.ogre-btc').text(b);
-	getVolume(v, function(res) {
-		$('.ogre-usd').text('$'+res.toFixed(2));
+	var api = 'https://tradeogre.com/api/v1/ticker/btc-msr';
+	$.ajax({
+		dataType: "json",
+		url: proxy + api,
+		success: function(resp) {
+			var v = resp.volume;
+			var b = resp.price;
+			$('.ogre-btc').html('<i class="fa fa-btc" aria-hidden="true"></i>'+b);
+			getVolume(v, function(res) {
+				$('.ogre-usd').text('$'+res.toFixed(2));
+			});
+		}
 	});
-}
-})
 }
 
 function getCrex() {
-var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
-
-$.ajax({
-	dataType: "json",
-	url: proxy + api,
-	headers: {"User-Agent": "uwu-uwu-uwu"},
-	success: function(resp) {
-		console.log('crex: ' +resp);
-	var v = resp['0'].volumeInBtc;
-	var b = resp['0'].last;
-	$('.crex-btc').text(b);
-	getVolume(v, function(res) {
-		$('.crex-usd').text('$'+res.toFixed(2));
+	var api = 'https://api.crex24.com/v2/public/tickers?instrument=MSR-BTC';
+	$.ajax({
+		dataType: "json",
+		url: proxy + api,
+		success: function(resp) {
+			console.log('crex: ' +resp);
+			var v = resp['0'].volumeInBtc;
+			var b = resp['0'].last;
+			$('.crex-btc').html('<i class="fa fa-btc" aria-hidden="true"></i>'+b);
+			getVolume(v, function(res) {
+				$('.crex-usd').text('$'+res.toFixed(2));
+			});
+		},
+		error: function( req, status, err ) {
+		    console.log( 'something went wrong', status, err );
+		 }
 	});
-},
-error: function( req, status, err ) {
-    console.log( 'something went wrong', status, err );
-  }
-})
 }
 
 function getSouthEx() {
 	var api = 'https://www.southxchange.com/api/price/msr/btc';
 	$.ajax({
-	dataType: "json",
-	url: proxy + api,
-	headers: {"User-Agent": "uwu-uwu-uwu"},
-	success: function(resp) {
-	console.log('getSouthEx: ' +resp);
-
-	var v = resp.Volume24Hr*resp.Last;
-	var b = resp.Last;
-	$('.southex-btc').text(b);
-	getVolume(v, function(res) {
-		$('.southex-usd').text('$'+res.toFixed(2));
+		dataType: "json",
+		url: proxy + api,
+		success: function(resp) {
+			console.log('getSouthEx: ' +resp);
+			var v = resp.Volume24Hr*resp.Last;
+			var b = resp.Last;
+			$('.southex-btc').html('<i class="fa fa-btc" aria-hidden="true"></i>'+b);
+			getVolume(v, function(res) {
+				$('.southex-usd').text('$'+res.toFixed(2));
+			});
+		}
 	});
-}
-})
 }
 
 function getStex() {
-var api = 'https://api3.stex.com/public/ticker/51';
-$.ajax({
-	dataType: "json",
-	url: proxy + api,
-	headers: {"User-Agent": "uwu uwu uwu"},
-	success: function(resp) {
-		console.log('stex: ' +resp);
-	var v = resp.data.volume;
-	var b = resp.data.last;
-	$('.stex-btc').text(b);
-	getVolume(v, function(res) {
-		$('.stex-usd').text('$'+res.toFixed(2));
+	var api = 'https://api3.stex.com/public/ticker/51';
+	$.ajax({
+		dataType: "json",
+		url: proxy + api,
+		success: function(resp) {
+			console.log('stex: ' +resp);
+			var v = resp.data.volume;
+			var b = resp.data.last;
+			if (b == null) { 
+				b = 'No trades in last 24 hours';
+			}
+			$('.stex-btc').html('<i class="fa fa-btc" aria-hidden="true"></i>'+b);
+			getVolume(v, function(res) {
+				$('.stex-usd').text('$'+res.toFixed(2));
+			});
+		}
 	});
 }
-})
-}
 
-function getVolume(coin,callback) { 
-$.getJSON('https://api.coincap.io/v2/assets/bitcoin', function(btc) { 
-	//console.log(btc.data.priceUsd);
-	//console.log(coin);
-	usd = btc.data.priceUsd;
-	callback(parseFloat(btc.data.priceUsd).toFixed(2)*coin);
-
-})
+// 
+function getVolume(satoshis, callback) { 
+	$.getJSON('https://api.coincap.io/v2/assets/bitcoin', function(btc) { 
+		callback(parseFloat(btc.data.priceUsd).toFixed(2)*satoshis);
+	});
 }

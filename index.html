@@ -101,42 +101,6 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 	</div>
 	<div class="cut cut-bottom"></div>
 </section>
-<!-- team -->
-<section id="team" class="section gray-bg">
-	<div class="container">
-		<div class="flex-row title text-center">
-			<h1 class="centered">{% t sections.team.heading %}</h1>
-			<p class="light muted">{% t sections.team.paragraph %}</p>
-		</div>
-		<div class="row">
-			{% for order in (1..12) %}
-			{% for teammate in site.data[page.lang].team %}
-			{% assign member = teammate[1] %}
-			{% if member.order == order %}
-			<div class="col-md-4">
-				<div class="team text-center light-shadow">
-					<img src="/img/team/{{ member.image }}" alt="{{ member.seo_desc }}" class="avatar">
-					<div class="title">
-						<h4>{{ member.name }}</h4>
-						<h5 class="muted regular">{{ member.role }}</h5>
-					</div>
-					{% if member.social.github %}
-					<span class="team-social"><a href="https://github.com/{{ member.social.github }}" target="_blank"><i class="fa fa-github-square"></i></a></span>
-					{% endif %}
-					{% if member.social.linkedin %}
-					<span class="team-social"><a href="https://linkedin.com/{{ member.social.linkedin }}" target="_blank"><i class="fa fa-linkedin-square"></i></a></span>
-					{% endif %}
-					{% if member.social.twitter %}
-					<span class="team-social"><a href="https://twitter.com/{{ member.social.twitter }}" target="_blank"><i class="fa fa-twitter-square"></i></a></span>
-					{% endif %}
-				</div>
-			</div>
-			{% endif %}
-			{%endfor%}
-			{%endfor%}
-		</div>
-	</div>
-</section>
 <!-- resources -->
 <section id="resources" class="section section-padded">
 	<div class="cut cut-top"></div>

@@ -1,6 +1,5 @@
 banner:
-  line1: "Bitcoin can be traced back to you."
-  typewriter: "Masari keeps your funds secure and untraceable."
+  heading: "Masari is a private, fungible, fast, secure, and efficiently scalable medium of commerce."
 
 navigation:
   home: "Home"
@@ -11,14 +10,13 @@ navigation:
   resources: "Resources"
   research: "Research"
   language: "Language"
-
 sections:
   about:
-    heading: "About"
+    heading: "About Masari"
     paragraphs:
-      line1: "Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured against any adversary. Using a cryptographically sound protocol, Masari ensures that all your transactions are private by default."
-      line2: "By using the RingCT protocol, Masari is able to ensure that all transactions are untraceable, unlinkable, and that amounts transferred are hidden from the public."
-      line3: "All of the privacy features in Masari resolve into true fungibility, which makes its digital currency equivalent to cash or gold, where no transaction can be discriminated against another."
+      line1: "Masari is a privacy-centric innovative cryptocurrency that allows users to send money around the globe with low fees very quickly."
+      line2: "Masari ($MSR) is a proof of work peer-to-peer internet currency using the well researched and cryptographically sound <a href='https://cryptonote.org/whitepaper.pdf' target='_blank'>CryptoNote</a> and <a href='https://lab.getmonero.org/pubs/MRL-0005.pdf' target='_blank'>RingCT</a> protocols. This means that every transaction origin, amount, and destination is obfuscated by default."
+      line3: "Masari is an open source project that is fully decentralized, similar to bitcoin. With several CryptoNote firsts such as uncle mining via the <a href='https://github.com/masari-project/research-corner/blob/master/secor/secor.pdf' target='_blank'>SECOR protocol</a>, a <a href='https://masariwallet.com' target='_blank'>fully client side web wallet</a>, and PoW sharding via the <a href='https://github.com/masari-project/research-corner/blob/master/blocktree/blocktree.pdf' target=''>blocktree protocol</a>, Masari is a fast, fungible, secure, private and soon-to-be scalable currency."
     images:
       block1:
         heading: "Scalable"
@@ -32,9 +30,6 @@ sections:
   roadmap:
     heading: "Roadmap"
     paragraph: "This roadmap is community driven and subject to change, represents prior achievements (non-comprehensive) and estimated timelines for future plans."
-  team:
-    heading: "Team"
-    paragraph: "These are the myserious figures behind great technology."
   research:
     heading: "Research Corner"
     paragraph: "The Masari Research Corner researches innovation in privacy and cryptocurrency technology within the context of advancing Masari's protocol"
@@ -53,7 +48,7 @@ language:
 
 seo:
   keywords: "masari, monero, crypto, cryptocurrency, blockchain, private money, hidden cash"
-  author: "Masari team"
+  author: "Masari community"
   images:
     preloader: "Preloader image"
     logo: "Masari Cryptocurrency"

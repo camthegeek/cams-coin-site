@@ -51,9 +51,11 @@ jQuery(function($) {
 		if ($(window).scrollTop() > 50) {
 			$('nav.original').css('opacity', '0');
 			$('nav.navbar-fixed-top').css('opacity', '1');
+			$('.navbar-dark .navbar-toggler').css('color', '##658289');
 		} else {
 			$('nav.original').css('opacity', '1');
 			$('nav.navbar-fixed-top').css('opacity', '0');
+			$('.navbar-dark .navbar-toggler').css('color', '#658289');
 		}
 	}
 

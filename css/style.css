@@ -966,7 +966,16 @@ footer .social-footer li:hover a {
 .navbar-logo { 
 	height: 50px !important;
 }
+@media (max-width: 991.98px) { 
+.navbar-logo-text { 
+	margin-left: -50px;
+}
 
+.navbar-expand-lg > .container { 
+padding-right: 40px;
+    padding-left: 40px;
+    }
+}
 .navbar-logo-text { 
     font-size: 3rem;
     color: #658289;

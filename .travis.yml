@@ -23,7 +23,6 @@ sudo: false # route your build to the container-based infrastructure for a faste
 
 deploy:
   provider: pages
-  target_branch: site
   skip_cleanup: true
   keep-history: true
   local_dir: _site/  # deploy this directory containing final build

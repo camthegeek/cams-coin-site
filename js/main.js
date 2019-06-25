@@ -117,9 +117,48 @@ $(function() {
   	var opsys = "";
   	var dl = "";
   	var infoLine = navigator.appVersion;
-  	console.log(navigator.appVersion);
+  	//console.log(navigator.appVersion);
+  	var os = navigator.platform;
+  	console.log(os);
 
-  	if (navigator.appVersion.indexOf("Win64") != -1) { 
+  	switch (os) { 
+
+  		case 'Win32':
+  			opsys = "Windows"
+  			dl = $('.download').data('win-dl');
+  			console.log(dl);
+  		break;
+
+  		case 'Android':
+  			opsys = "Android"
+  			dl = $('.download').data('android-dl');
+  			console.log(dl);
+  		break;
+
+  		case 'Linux': 
+  			opsys = "Linux";
+  			dl = $('.download').data('linux-dl');
+  			console.log(dl);
+  		break;
+
+  		case 'iPhone':
+  			dl = "#downloads";
+  		break;
+
+  		case 'iPad': 
+  			dl = "#downloads";
+  		break;
+
+
+  		case 'Macintosh':
+  			opsys = 'Mac OS';
+  			dl = $('.download').data('mac-dl');
+  			console.log(dl);
+  		break;
+  	}	
+
+
+  	/*if (navigator.appVersion.indexOf("Win64") != -1) { 
   		opsys = "Windows 64-bit"
   		dl = $('.download').data('win-dl');
   		console.log(dl);
@@ -138,11 +177,11 @@ $(function() {
   		opsys = "Mac"
   		dl = $('.download').data('mac-dl');
   		console.log(dl);
-  	} 
+  	} */
 
   	$('.opsys').text(opsys);
   	$('.download').attr('href',dl);
-  	$('.testarea123').text(infoLine);
+  	$('.testarea123').text(os);
 });
 
 // --------------------------------------------------------

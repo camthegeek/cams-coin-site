@@ -134,7 +134,7 @@ $(function() {
   		dl = $('.download').data('android-dl');
   		console.log(dl);
   	} 
-  	if (navigator.appVersion.indexOf("") != -1) { 
+  	if (navigator.appVersion.indexOf("Apple") != -1) { 
   		opsys = "Mac"
   		dl = $('.download').data('mac-dl');
   		console.log(dl);

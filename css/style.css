@@ -424,14 +424,10 @@ section {
 	}
 }
 
-.services {
-	margin: 40px 0;
-}
-
 .about {
 	width: 100%;
-	height: 320px;
-	margin: 80px 0;
+	/*height: 320px;*/
+	margin: 40px 0;
 	text-align: center;
 	border: 1px solid #ddd;
 	-webkit-transition: all 0.3s ease;
@@ -441,9 +437,9 @@ section {
 
 .about .icon-holder {
 	position: relative;
-	top: 100px;
+	/*top: 100px;*/
 	display: inline-block;
-	margin-bottom: 40px;
+	/*margin-bottom: 40px;*/
 	padding: 10px 0px 10px 0px;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
@@ -451,7 +447,7 @@ section {
 
 .about .heading {
 	position: relative;
-	top: 80px;
+	/*top: 80px;*/
 	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -538,45 +534,6 @@ footer {
 	-webkit-background-size: cover;
 	background-size: cover;
 	background: #333;
-}
-
-footer .trial-button {
-	overflow: hidden !important;
-	margin: 40px 0;
-}
-
-footer .open-blink {
-	content: ' ';
-	position: relative;
-	display: inline-block;
-	width: 14px;
-	height: 14px;
-	margin: 0 20px;
-	border-radius: 50%;
-	background-color: #4caf50;
-	-webkit-animation-name: flash;
-	animation-name: flash;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-}
-
-footer .open-blink:before {
-	content: ' ';
-	position: absolute;
-	top: -8px;
-	left: -8px;
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	opacity: 0.1;
-	border-radius: 50%;
-	background-color: #4caf50;
-}
-
-footer .opening-hours {
-	margin-top: 60px;
 }
 
 footer .bottom-footer {
@@ -1291,4 +1248,40 @@ footer h3 {
 .table th, .table td {
 	background: #ededed;
 
+}
+
+.hidden {
+	display: none;
+}
+
+.download {
+	background-color: #4cb860;
+	border-color: #4cb860;
+}
+.download.btn-lg {
+	display: inline-block;
+}
+.download:hover { 
+	background-color: #137516;
+	border-color:#137516;
+	text-decoration: none;
+}
+.fa.download-btn-logo {
+    line-height: 5rem;
+    font-size: 2.5rem;
+}
+.download-btn-logo.fa-windows {
+	margin-right:.5rem;
+}
+.download-btn-logo.fa-apple {
+	margin-right:.5rem;
+}
+.download-btn-logo.fa-linux {
+	margin-right:.5rem;
+}
+.dlversion {
+    display: block;
+    font-size: .75rem;
+    margin: -1.25rem 0 0 2.50rem;
+    padding-bottom: 1rem;
 }

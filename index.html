@@ -14,6 +14,62 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 				<div class="flex-row">
 					<div class="col-md-12 text-center">
 						<h1 class="white">{% t banner.heading %}</h1>
+						<h2 class="white">{% t banner.subheading %}</h2>
+						{% assign corewin = false %}
+						{% assign corelin = false %}
+						{% assign coremac = false %}
+						{% assign coredroid = false %}
+						{% assign coreVerWin = false %}
+						{% assign coreVerLinux = false %}
+						{% assign coreVerMac = false %}
+						{% assign coreVerAndroid = false %}
+						{% for os1 in site.data[page.lang].downloads %}
+							{% assign opsys1 = os1[1] %}
+							{% assign operatingsystem = opsys1.system %}
+							{% case operatingsystem %}
+								{% when "Windows" %}
+									{% for dl in opsys1.releases %}
+										{% if dl.type contains "CLI" %} 
+											{% assign corewin = dl.url %}
+											{% assign coreVerWin = dl.version | append: ' ' | append: dl.codename %}
+										{% endif %}
+									{% endfor %}
+								{% when "Linux" %}
+									{% for dl in opsys1.releases %}
+										{% if dl.type contains "CLI" %} 
+											{% assign corelin = dl.url %}
+											{% assign coreVerLinux = dl.version | append:  dl.codename %}
+										{% endif %}
+									{% endfor %}
+								{% when "Apple" %}
+									{% for dl in opsys1.releases %}
+										{% if dl.type contains "CLI" %} 
+											{% assign coremac = dl.url %}
+											{% assign coreVerMac = dl.version | append:  dl.codename  %}
+										{% endif %}
+									{% endfor %}
+								{% when "Android" %}
+									{% for dl in opsys1.releases %}
+										{% if dl.type contains "Play Store" %} 
+											{% assign coredroid = dl.url %}
+											{% assign coreVerAndroid = dl.version | append:  dl.codename %}
+										{% endif %}
+									{% endfor %}
+							{% endcase %}
+						{% endfor %}
+
+						<a class="download btn-primary btn-lg" data-win-dl="{{ corewin }}" data-win-dl-ver="v{{ coreVerWin }}" data-linux-dl="{{ corelin }}" data-linux-dl-ver="v{{ coreVerLinux }}" data-android-dl="{{ coredroid }}" data-android-dl-ver="v{{ coreVerAndroid }}" data-mac-dl="{{ coremac }}" data-mac-dl-ver="v{{ coreVerMac }}">
+							{% capture download %}
+								{% t banner.download %}
+							{% endcapture %}
+							{% assign download_text = download | split: " " %} 
+							
+							<i class="fa download-btn-logo"></i> 
+							<span class="download-text">{{ download_text[0] }} </span> 
+							<span class="for-text hidden">{{ download_text[1] }} </span> 
+							<span class="opsys"></span>
+							<span class="dlversion"></span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -55,9 +111,15 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 					</div>
 					<h4 class="heading">{% t sections.about.images.block3.heading %}</h4>
 					<p class="description">{% t sections.about.images.block3.text %}</p>
-				</div>
+				</div> 
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>Button learn more</p>
+			</div>
+		</div>
+
 	</div>
 	<div class="cut cut-bottom"></div>
 </section>

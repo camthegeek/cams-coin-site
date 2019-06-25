@@ -1,5 +1,7 @@
 banner:
-  heading: "Masari is a private, fungible, fast, secure, and efficiently scalable medium of commerce."
+  heading: "Masari"
+  subheading: "Simple. Scalable. Secure"
+  download: "Download for"
 
 navigation:
   home: "Home"

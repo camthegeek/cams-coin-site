@@ -1,11 +1,9 @@
-jQuery(function($) {
-	"use strict";
-
+// --------------------------------------------------------
+//	Language Dropdown
+// -------------------------------------------------------- 
+$(function() {
 	var ratio = 2;
-
-	// Window Load
-	$(window).on('load', (function() {
-		// Preloader
+	// Preloader
 		$('.preloader').addClass('animated fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 			$('.preloader').hide();
 			$('.parallax, header').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -33,11 +31,6 @@ jQuery(function($) {
 		$('.mobile-nav ul').html($('nav .navbar-nav').html());
 		$('nav.navbar-fixed-top .navbar-brand img').attr('src', $('nav.navbar-fixed-top .navbar-brand img').data("active-url"));
 
-		// Typing Intro Init
-		$(".typed").typewriter({
-			speed: 60
-		});
-
 		// Onepage Nav
 		$('.navbar.navbar-fixed-top .navbar-nav').onePageNav({
 			currentClass: 'active',
@@ -45,7 +38,7 @@ jQuery(function($) {
 			scrollSpeed: 400,
 			filter: ':not(.btn)'
 		});
-	}));
+
 	// Window Scroll
 	function onScroll() {
 		if ($(window).scrollTop() > 50) {
@@ -107,11 +100,8 @@ jQuery(function($) {
 			}
 		}
 	});
-});
-// --------------------------------------------------------
-//	Language Dropdown
-// -------------------------------------------------------- 
-$(function() {
+
+
 	$('body').on("click", ".langbtn", function(e){
     	$('.lang-dropdown-child').addClass('show-child');
     	e.stopPropagation();
@@ -119,6 +109,61 @@ $(function() {
 	$('body').click(function(){
     	$('.lang-dropdown-child').removeClass('show-child');
   	});
+  	var opsys = "";
+  	var dl = "";
+  	var infoLine = navigator.appVersion;
+  	var os = navigator.platform;
+
+  	switch (os) { 
+  		case 'Win32':
+  			opsys = "Windows"
+  			dl = $('.download').data('win-dl');
+  			ver = $('.download').data('win-dl-ver');
+  			$('.for-text').removeClass('hidden');
+  			console.log(dl);
+  		break;
+
+  		case 'Android':
+  			opsys = "Android"
+  			dl = $('.download').data('android-dl');
+  			ver = $('.download').data('android-dl-ver');
+  			$('.for-text').removeClass('hidden');
+  			console.log(dl);
+  		break;
+
+  		case 'Linux x86_64': 
+  			opsys = "Linux";
+  			dl = $('.download').data('linux-dl');
+  			ver = $('.download').data('linux-dl-ver');
+  			$('.for-text').removeClass('hidden');
+  			console.log(dl);
+  		break;
+
+  		case 'iPhone':
+  			dl = "#downloads";
+  		break;
+
+  		case 'iPad': 
+  			dl = "#downloads";
+  		break;
+
+  		case 'MacIntel':
+  			opsys = 'Mac OS';
+  			dl = $('.download').data('mac-dl');
+  			ver = $('.download').data('mac-dl-ver');
+  			$('.for-text').removeClass('hidden');
+  			console.log(dl);
+  		break;
+  		
+  		default:
+  			dl = '#downloads';
+  		break;
+  	}	
+
+  	$('.opsys').text(opsys);
+  	$('.dlversion').text(ver);
+  	$('.download').attr('href',dl);
+  	$('.download-btn-logo').addClass('fa-'+opsys.toLowerCase());
 });
 
 // --------------------------------------------------------
@@ -138,6 +183,7 @@ setInterval(getStex, 3600000)
 // CORS proxy
 // may be rate limited
 // proxy can be set up somewhere else
+// this should be only be a temporary solution.
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 
 // could probably consolidate these functions into one. this works too.

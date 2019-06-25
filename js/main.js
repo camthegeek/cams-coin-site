@@ -33,11 +33,6 @@ jQuery(function($) {
 		$('.mobile-nav ul').html($('nav .navbar-nav').html());
 		$('nav.navbar-fixed-top .navbar-brand img').attr('src', $('nav.navbar-fixed-top .navbar-brand img').data("active-url"));
 
-		// Typing Intro Init
-		$(".typed").typewriter({
-			speed: 60
-		});
-
 		// Onepage Nav
 		$('.navbar.navbar-fixed-top .navbar-nav').onePageNav({
 			currentClass: 'active',
@@ -119,6 +114,35 @@ $(function() {
 	$('body').click(function(){
     	$('.lang-dropdown-child').removeClass('show-child');
   	});
+  	var opsys = "";
+  	var dl = "";
+  	var infoLine = navigator.appVersion;
+  	console.log(navigator.appVersion);
+
+  	if (navigator.appVersion.indexOf("Win64") != -1) { 
+  		opsys = "Windows 64-bit"
+  		dl = $('.download').data('win-dl');
+  		console.log(dl);
+  	}
+  	if (navigator.appVersion.indexOf("Linux") != -1) { 
+  		opsys = "Linux"
+  		dl = $('.download').data('linux-dl');
+  		console.log(dl);
+  	} 
+  	if (navigator.appVersion.indexOf("Android") != -1) { 
+  		opsys = "Android"
+  		dl = $('.download').data('android-dl');
+  		console.log(dl);
+  	} 
+  	if (navigator.appVersion.indexOf("") != -1) { 
+  		opsys = "Mac"
+  		dl = $('.download').data('mac-dl');
+  		console.log(dl);
+  	} 
+
+  	$('.opsys').text(opsys);
+  	$('.download').attr('href',dl);
+  	$('.testarea123').text(infoLine);
 });
 
 // --------------------------------------------------------

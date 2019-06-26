@@ -135,7 +135,7 @@ $(function() {
   			console.log(dl);
   		break;
 
-  		case 'Linux': 
+  		case 'Linux x86_64': 
   			opsys = "Linux";
   			dl = $('.download').data('linux-dl');
   			console.log(dl);

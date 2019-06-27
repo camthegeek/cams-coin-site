@@ -424,10 +424,6 @@ section {
 	}
 }
 
-.services {
-	margin: 40px 0;
-}
-
 .about {
 	width: 100%;
 	/*height: 320px;*/
@@ -538,45 +534,6 @@ footer {
 	-webkit-background-size: cover;
 	background-size: cover;
 	background: #333;
-}
-
-footer .trial-button {
-	overflow: hidden !important;
-	margin: 40px 0;
-}
-
-footer .open-blink {
-	content: ' ';
-	position: relative;
-	display: inline-block;
-	width: 14px;
-	height: 14px;
-	margin: 0 20px;
-	border-radius: 50%;
-	background-color: #4caf50;
-	-webkit-animation-name: flash;
-	animation-name: flash;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-}
-
-footer .open-blink:before {
-	content: ' ';
-	position: absolute;
-	top: -8px;
-	left: -8px;
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	opacity: 0.1;
-	border-radius: 50%;
-	background-color: #4caf50;
-}
-
-footer .opening-hours {
-	margin-top: 60px;
 }
 
 footer .bottom-footer {
@@ -1291,4 +1248,8 @@ footer h3 {
 .table th, .table td {
 	background: #ededed;
 
+}
+
+.hidden {
+	display: none;
 }

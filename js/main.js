@@ -117,27 +117,28 @@ $(function() {
   	var opsys = "";
   	var dl = "";
   	var infoLine = navigator.appVersion;
-  	//console.log(navigator.appVersion);
   	var os = navigator.platform;
   	console.log(os);
 
   	switch (os) { 
-
   		case 'Win32':
   			opsys = "Windows"
   			dl = $('.download').data('win-dl');
+  			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
 
   		case 'Android':
   			opsys = "Android"
   			dl = $('.download').data('android-dl');
+  			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
 
   		case 'Linux x86_64': 
   			opsys = "Linux";
   			dl = $('.download').data('linux-dl');
+  			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
 
@@ -149,39 +150,22 @@ $(function() {
   			dl = "#downloads";
   		break;
 
-
   		case 'Macintosh':
   			opsys = 'Mac OS';
   			dl = $('.download').data('mac-dl');
+  			$('.for-text').removeClass('hidden');
   			console.log(dl);
+  		break;
+  		
+  		default:
+  			dl = '#downloads';
   		break;
   	}	
 
-
-  	/*if (navigator.appVersion.indexOf("Win64") != -1) { 
-  		opsys = "Windows 64-bit"
-  		dl = $('.download').data('win-dl');
-  		console.log(dl);
-  	}
-  	if (navigator.appVersion.indexOf("Linux") != -1) { 
-  		opsys = "Linux"
-  		dl = $('.download').data('linux-dl');
-  		console.log(dl);
-  	} 
-  	if (navigator.appVersion.indexOf("Android") != -1) { 
-  		opsys = "Android"
-  		dl = $('.download').data('android-dl');
-  		console.log(dl);
-  	} 
-  	if (navigator.appVersion.indexOf("Apple") != -1) { 
-  		opsys = "Mac"
-  		dl = $('.download').data('mac-dl');
-  		console.log(dl);
-  	} */
-
   	$('.opsys').text(opsys);
+
   	$('.download').attr('href',dl);
-  	$('.testarea123').text(os);
+  	$('.download-btn-logo').addClass('fa-'+opsys.toLowerCase());
 });
 
 // --------------------------------------------------------
@@ -201,6 +185,7 @@ setInterval(getStex, 3600000)
 // CORS proxy
 // may be rate limited
 // proxy can be set up somewhere else
+// this should be only be a temporary solution.
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 
 // could probably consolidate these functions into one. this works too.

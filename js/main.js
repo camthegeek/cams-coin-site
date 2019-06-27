@@ -1,11 +1,19 @@
 jQuery(function($) {
 	"use strict";
 
-	var ratio = 2;
+	
 
 	// Window Load
 	$(window).on('load', (function() {
-		// Preloader
+		
+	});
+});
+// --------------------------------------------------------
+//	Language Dropdown
+// -------------------------------------------------------- 
+$(function() {
+	var ratio = 2;
+	// Preloader
 		$('.preloader').addClass('animated fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 			$('.preloader').hide();
 			$('.parallax, header').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -101,12 +109,8 @@ jQuery(function($) {
 				return false;
 			}
 		}
-	});
-});
-// --------------------------------------------------------
-//	Language Dropdown
-// -------------------------------------------------------- 
-$(function() {
+
+
 	$('body').on("click", ".langbtn", function(e){
     	$('.lang-dropdown-child').addClass('show-child');
     	e.stopPropagation();

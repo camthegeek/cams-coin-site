@@ -38,7 +38,7 @@ $(function() {
 			scrollSpeed: 400,
 			filter: ':not(.btn)'
 		});
-	
+
 	// Window Scroll
 	function onScroll() {
 		if ($(window).scrollTop() > 50) {
@@ -99,6 +99,7 @@ $(function() {
 				return false;
 			}
 		}
+	});
 
 
 	$('body').on("click", ".langbtn", function(e){

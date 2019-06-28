@@ -1257,7 +1257,6 @@ footer h3 {
 .download {
 	background-color: #4cb860;
 	border-color: #4cb860;
-	padding:2rem;
 }
 .download.btn-lg {
 	display: inline-block;
@@ -1280,7 +1279,9 @@ footer h3 {
 .download-btn-logo.fa-linux {
 	margin-right:.5rem;
 }
-span.dlversion {
+.dlversion {
     display: block;
     font-size: .75rem;
+    margin: -1.25rem 0 0 2.50rem;
+    padding-bottom: 1rem;
 }

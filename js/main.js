@@ -118,6 +118,7 @@ $(function() {
   		case 'Win32':
   			opsys = "Windows"
   			dl = $('.download').data('win-dl');
+  			ver = $('.download').data('win-dl-ver');
   			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
@@ -125,6 +126,7 @@ $(function() {
   		case 'Android':
   			opsys = "Android"
   			dl = $('.download').data('android-dl');
+  			ver = $('.download').data('android-dl-ver');
   			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
@@ -132,6 +134,7 @@ $(function() {
   		case 'Linux x86_64': 
   			opsys = "Linux";
   			dl = $('.download').data('linux-dl');
+  			ver = $('.download').data('linux-dl-ver');
   			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
@@ -147,6 +150,7 @@ $(function() {
   		case 'MacIntel':
   			opsys = 'Mac OS';
   			dl = $('.download').data('mac-dl');
+  			ver = $('.download').data('mac-dl-ver');
   			$('.for-text').removeClass('hidden');
   			console.log(dl);
   		break;
@@ -157,7 +161,7 @@ $(function() {
   	}	
 
   	$('.opsys').text(opsys);
-
+  	$('.dlversion').text(ver);
   	$('.download').attr('href',dl);
   	$('.download-btn-logo').addClass('fa-'+opsys.toLowerCase());
 });

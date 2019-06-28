@@ -1253,3 +1253,34 @@ footer h3 {
 .hidden {
 	display: none;
 }
+
+.download {
+	background-color: #4cb860;
+	border-color: #4cb860;
+	padding:2rem;
+}
+.download.btn-lg {
+	display: inline-block;
+}
+.download:hover { 
+	background-color: #137516;
+	border-color:#137516;
+	text-decoration: none;
+}
+.fa.download-btn-logo {
+    line-height: 5rem;
+    font-size: 2.5rem;
+}
+.download-btn-logo.fa-windows {
+	margin-right:.5rem;
+}
+.download-btn-logo.fa-apple {
+	margin-right:.5rem;
+}
+.download-btn-logo.fa-linux {
+	margin-right:.5rem;
+}
+span.dlversion {
+    display: block;
+    font-size: .75rem;
+}

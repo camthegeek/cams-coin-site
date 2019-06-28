@@ -113,7 +113,6 @@ $(function() {
   	var dl = "";
   	var infoLine = navigator.appVersion;
   	var os = navigator.platform;
-  	console.log(os);
 
   	switch (os) { 
   		case 'Win32':
@@ -145,7 +144,7 @@ $(function() {
   			dl = "#downloads";
   		break;
 
-  		case 'Macintosh':
+  		case 'MacIntel':
   			opsys = 'Mac OS';
   			dl = $('.download').data('mac-dl');
   			$('.for-text').removeClass('hidden');

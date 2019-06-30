@@ -1254,7 +1254,7 @@ footer h3 {
 	display: none;
 }
 
-.download {
+.masari {
 	background-color: #4cb860;
 	border-color: #4cb860;
 }
@@ -1285,3 +1285,28 @@ footer h3 {
     margin: -1.25rem 0 0 2.50rem;
     padding-bottom: 1rem;
 }
+.center {
+	text-align: center;
+}
+
+.learn-more {
+	margin: 0 0 5rem 0;
+}
+
+.padded-row {
+	padding: 1.25rem;
+}
+
+p.left { 
+text-align: left;
+}
+
+.centered {
+	margin: 0 auto;
+}
+
+.left-align { 
+left: 0;
+}
+
+.right-align{ right: 0; }

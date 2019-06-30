@@ -29,6 +29,7 @@ sections:
       block3:
         heading: "Simple"
         text: "Cross-platform supported and easy to use"
+    learnmore: "Learn more about Masari"
   roadmap:
     heading: "Roadmap"
     paragraph: "This roadmap is community driven and subject to change, represents prior achievements (non-comprehensive) and estimated timelines for future plans."
@@ -66,3 +67,6 @@ seo:
     main:
       title: "Privacy focused cryptocurrency"
       desc: "Masari is a scalability-focused, untraceable, and fungible cryptocurrency. Our goal is to allow fast yet secure private transactions with low fees."
+    learnMoreMSR:
+      title: "What is Masari?"
+      desc: "What is Masari? Cryptocurrency."

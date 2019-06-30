@@ -58,7 +58,7 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 							{% endcase %}
 						{% endfor %}
 
-						<a class="download btn-primary btn-lg" data-win-dl="{{ corewin }}" data-win-dl-ver="v{{ coreVerWin }}" data-linux-dl="{{ corelin }}" data-linux-dl-ver="v{{ coreVerLinux }}" data-android-dl="{{ coredroid }}" data-android-dl-ver="v{{ coreVerAndroid }}" data-mac-dl="{{ coremac }}" data-mac-dl-ver="v{{ coreVerMac }}">
+						<a class="download masari btn-primary btn-lg" data-win-dl="{{ corewin }}" data-win-dl-ver="v{{ coreVerWin }}" data-linux-dl="{{ corelin }}" data-linux-dl-ver="v{{ coreVerLinux }}" data-android-dl="{{ coredroid }}" data-android-dl-ver="v{{ coreVerAndroid }}" data-mac-dl="{{ coremac }}" data-mac-dl-ver="v{{ coreVerMac }}">
 							{% capture download %}
 								{% t banner.download %}
 							{% endcapture %}
@@ -116,7 +116,11 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<p>Button learn more</p>
+				<div class="learn-more center">
+					<a href="/what-is-masari">
+						<span class="btn btn-xl masari">{% t sections.about.learnmore %}</span>
+					</a>
+				</div>
 			</div>
 		</div>
 
@@ -193,6 +197,16 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 			</div>
 			<div class="col-md-3">
 				<div class="resources-con">
+				<a href="https://funding.getmasari.org/" target="_blank">
+					<div class="resources light-shadow">
+						<img src="/img/logo.png" alt="Masari Funding System">
+						<h4> Community Funding </h4>
+					</div>
+				</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="resources-con">
 				<a href="https://getmasari.org/masari-wallet-generator.html" target="_blank">
 					<div class="resources light-shadow">
 						<img src="/img/icons/blockExplorer.png" alt="Masari Offline Wallet Generator">
@@ -218,6 +232,17 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 					<div class="resources light-shadow">
 						<img src="/img/icons/guides.png" alt="Masari User Guides">
 						<h4> Guides </h4>
+					</div>
+				</a>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="resources-con">
+				<a href="https://stats.masari.rocks" target="_blank">
+					<div class="resources light-shadow">
+						<img src="/img/logo.png" alt="Masari Technical Visual Stats">
+						<h4> Visual Stats </h4>
 					</div>
 				</a>
 				</div>

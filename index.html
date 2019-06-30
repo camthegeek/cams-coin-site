@@ -15,6 +15,11 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 					<div class="col-md-12 text-center">
 						<h1 class="white">{% t banner.heading %}</h1>
 						<h2 class="white">{% t banner.subheading %}</h2>
+						{% comment %} 
+						Assign a bunch of variables to be used later.
+						Then look in _data/[lang]/downloads for available downloads.
+						Grab some info, assign to the bunch of variables that get used afterwards.
+						{% endcomment %}
 						{% assign corewin = false %}
 						{% assign corelin = false %}
 						{% assign coremac = false %}
@@ -38,21 +43,21 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 									{% for dl in opsys1.releases %}
 										{% if dl.type contains "CLI" %} 
 											{% assign corelin = dl.url %}
-											{% assign coreVerLinux = dl.version | append:  dl.codename %}
+											{% assign coreVerLinux = dl.version | append: ' ' | append:  dl.codename %}
 										{% endif %}
 									{% endfor %}
 								{% when "Apple" %}
 									{% for dl in opsys1.releases %}
 										{% if dl.type contains "CLI" %} 
 											{% assign coremac = dl.url %}
-											{% assign coreVerMac = dl.version | append:  dl.codename  %}
+											{% assign coreVerMac = dl.version | append: ' ' | append:  dl.codename  %}
 										{% endif %}
 									{% endfor %}
 								{% when "Android" %}
 									{% for dl in opsys1.releases %}
 										{% if dl.type contains "Play Store" %} 
 											{% assign coredroid = dl.url %}
-											{% assign coreVerAndroid = dl.version | append:  dl.codename %}
+											{% assign coreVerAndroid = dl.version | append: ' ' | append:  dl.codename %}
 										{% endif %}
 									{% endfor %}
 							{% endcase %}
@@ -62,8 +67,12 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 							{% capture download %}
 								{% t banner.download %}
 							{% endcapture %}
-							{% assign download_text = download | split: " " %} 
-							
+							{% assign download_text = download | split: " " %}
+							{% comment %}
+							This area is reliant on javascript to fill in.
+							If OS platform is Win32/Linux x86_64/MacIntel: show "Download for" (banner.download from translations).
+							Otherwise, show Download and link to #downloads.
+							{%endcomment%}
 							<i class="fa download-btn-logo"></i> 
 							<span class="download-text">{{ download_text[0] }} </span> 
 							<span class="for-text hidden">{{ download_text[1] }} </span> 
@@ -139,25 +148,30 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 			<div class="col-md-12">
 				<div class="timeline">
 					{% for order in (1..30) %}
-					{% for goal in site.data[page.lang].roadmap %}
-					{% assign wingman = goal[1] %}
-					{% if wingman.order == order %}
-					<div class="timeline-container {{ wingman.alignment }}">
+						{% for goal in site.data[page.lang].roadmap %}
+							{% assign item = goal[1] %}
+							{% if item.order == order %}
+					<div class="timeline-container {{ item.alignment }}">
 						<div class="timeline-content">
-							{% if wingman.year %}
+							{% if item.year %}
 							<p class="timeline-date">
-								{% if wingman.quarter %}
-								Q{{ wingman.quarter }}
+								{% if item.quarter %}
+									Q{{ item.quarter }}
 								{% endif %}
-								{{ wingman.year }}</p>
-								{%endif%}
-								<h2>{{ wingman.title }}</h2> 
-								{% if wingman.complete == "true" %}<span style="color: #4cb85f; display: inline-block;"><i class="fa fa-check" aria-hidden="true"></i></span>{% endif %}
-								<p> {{ wingman.desc }} </p>
+								{{ item.year }}
+							</p>
+							{%endif%}
+							<h2>{{ item.title }}</h2> 
+							{% if item.complete == "true" %}
+							<span style="color: #4cb85f; display: inline-block;">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</span>
+							{% endif %}
+							<p> {{ item.desc }} </p>
 						</div>
 					</div>
-					{% endif %}
-					{% endfor %}
+							{% endif %}
+						{% endfor %}
 					{% endfor %}s
 				</div>
 			</div>
@@ -169,7 +183,6 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 <section id="resources" class="section section-padded">
 	<div class="cut cut-top"></div>
 	<div class="container">
-		<!-- this area will become like the other areas in the future. hardcoded in for now -->
 		<div class="flex-row text-center title">
 			<h1 class="centered">Resources</h1>
 			<p class="light muted">Links to useful utilities for the Masari blockchain</p>
@@ -177,77 +190,74 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 		<div class="row">
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="https://explore.masariwallet.com/" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/icons/blockExplorer.png" alt="Masari Block Explorer">
-						<h4> Block Explorer </h4>
-					</div>
-				</a>
+					<a href="https://explore.masariwallet.com/" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/icons/blockExplorer.png" alt="Masari Block Explorer">
+							<h4> Block Explorer </h4>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="https://masariwallet.com/" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/icons/simple.png" alt="Masari Web Wallet">
-						<h4> Web Wallet </h4>
-					</div>
-				</a>
+					<a href="https://masariwallet.com/" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/icons/simple.png" alt="Masari Web Wallet">
+							<h4> Web Wallet </h4>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="https://funding.getmasari.org/" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/logo.png" alt="Masari Funding System">
-						<h4> Community Funding </h4>
-					</div>
-				</a>
+					<a href="https://funding.getmasari.org/" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/logo.png" alt="Masari Funding System">
+							<h4> Community Funding </h4>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="https://getmasari.org/masari-wallet-generator.html" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/icons/blockExplorer.png" alt="Masari Offline Wallet Generator">
-						<h4> Wallet Generator </h4>
-					</div>
-				</a>
+					<a href="https://getmasari.org/masari-wallet-generator.html" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/icons/blockExplorer.png" alt="Masari Offline Wallet Generator">
+							<h4> Wallet Generator </h4>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="https://miningpoolstats.stream/masari" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/icons/miningpools.png" alt="Masari Block Explorer">
-						<h4> Mining Pools </h4>
-					</div>
-				</a>
+					<a href="https://miningpoolstats.stream/masari" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/icons/miningpools.png" alt="Masari Block Explorer">
+							<h4> Mining Pools </h4>
+						</div>
+					</a>
 				</div>
 			</div>
-
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="/guides" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/icons/guides.png" alt="Masari User Guides">
-						<h4> Guides </h4>
-					</div>
-				</a>
+					<a href="/guides" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/icons/guides.png" alt="Masari User Guides">
+							<h4> Guides </h4>
+						</div>
+					</a>
 				</div>
 			</div>
-
 			<div class="col-md-3">
 				<div class="resources-con">
-				<a href="https://stats.masari.rocks" target="_blank">
-					<div class="resources light-shadow">
-						<img src="/img/logo.png" alt="Masari Technical Visual Stats">
-						<h4> Visual Stats </h4>
-					</div>
-				</a>
+					<a href="https://stats.masari.rocks" target="_blank">
+						<div class="resources light-shadow">
+							<img src="/img/logo.png" alt="Masari Technical Visual Stats">
+							<h4> Visual Stats </h4>
+						</div>
+					</a>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<div class="cut cut-bottom"></div>

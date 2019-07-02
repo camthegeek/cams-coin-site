@@ -1,5 +1,5 @@
 system: "Windows"
-arch: "64"
+order: 1
 releases:
 - type: "GUI"
   version: "0.3.0.0"

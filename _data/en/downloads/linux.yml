@@ -1,8 +1,8 @@
 system: "Linux"
-arch: "64"
 releases:
 - type: "CLI"
   version: "0.3.1.1"
   codename: "Dandy Dromedary"
   url: "https://github.com/masari-project/masari/releases/download/v0.3.1.1/masari-linux-x64-v0.3.1.1.zip"
   sha256: "38385bc3d4babf4746103dee1ff494b485f4e636643d9db64b199210f8d31b7d"
+order: 2

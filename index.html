@@ -184,80 +184,27 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 	<div class="cut cut-top"></div>
 	<div class="container">
 		<div class="flex-row text-center title">
-			<h1 class="centered">Resources</h1>
-			<p class="light muted">Links to useful utilities for the Masari blockchain</p>
+			<h1 class="centered">{% t sections.resources.heading %}</h1>
+			<p class="light muted">{% t sections.resources.paragraph %}</p>
 		</div>
 		<div class="row">
+			{% for order in (1..30) %}
+			{% for resources in site.data[page.lang].resources %}
+			{% assign resource = resources[1] %}
+			{% if resource.order == order %}
 			<div class="col-md-3">
 				<div class="resources-con">
-					<a href="https://explore.masariwallet.com/" target="_blank">
+					<a href="{{ resource.url }}" target="_blank">
 						<div class="resources light-shadow">
-							<img src="/img/icons/blockExplorer.png" alt="Masari Block Explorer">
-							<h4> Block Explorer </h4>
+							<img src="/img/icons/{{ resource.icon }}" alt="Masari {{ resource.name }}">
+							<h4> {{ resource.name }} </h4>
 						</div>
 					</a>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="resources-con">
-					<a href="https://masariwallet.com/" target="_blank">
-						<div class="resources light-shadow">
-							<img src="/img/icons/simple.png" alt="Masari Web Wallet">
-							<h4> Web Wallet </h4>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="resources-con">
-					<a href="https://funding.getmasari.org/" target="_blank">
-						<div class="resources light-shadow">
-							<img src="/img/logo.png" alt="Masari Funding System">
-							<h4> Community Funding </h4>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="resources-con">
-					<a href="https://getmasari.org/masari-wallet-generator.html" target="_blank">
-						<div class="resources light-shadow">
-							<img src="/img/icons/blockExplorer.png" alt="Masari Offline Wallet Generator">
-							<h4> Wallet Generator </h4>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="resources-con">
-					<a href="https://miningpoolstats.stream/masari" target="_blank">
-						<div class="resources light-shadow">
-							<img src="/img/icons/miningpools.png" alt="Masari Block Explorer">
-							<h4> Mining Pools </h4>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="resources-con">
-					<a href="/guides" target="_blank">
-						<div class="resources light-shadow">
-							<img src="/img/icons/guides.png" alt="Masari User Guides">
-							<h4> Guides </h4>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="resources-con">
-					<a href="https://stats.masari.rocks" target="_blank">
-						<div class="resources light-shadow">
-							<img src="/img/logo.png" alt="Masari Technical Visual Stats">
-							<h4> Visual Stats </h4>
-						</div>
-					</a>
-				</div>
-			</div>
+			{% endif %}
+			{% endfor%} 
+			{% endfor %}
 		</div>
 	</div>
 	<div class="cut cut-bottom"></div>
@@ -270,8 +217,10 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 			<p class="light muted">{% t sections.downloads.paragraph %}</p>
 		</div>
 		<div class="row centered">
+			{% for order in (1..5) %}
 			{% for os in site.data[page.lang].downloads %}
 			{% assign opsys = os[1] %}
+			{% if opsys.order == order %}
 			<div class="col-md-6">
 				<div class="downloads light-shadow">
 					<h2 class="centered">
@@ -300,6 +249,8 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 				{% endfor %}
 				</div>
 			</div>
+			{% endif %}
+				{% endfor %}
 				{% endfor %}
 		</div>
 	</div>

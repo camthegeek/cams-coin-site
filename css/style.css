@@ -8,6 +8,67 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.about .description { 
+		font-size: 16px;
+	}
+	.about {
+		height: 250px;
+	}
+	.btn-lg, .btn-group-lg > .btn { 
+	padding: 3px;
+}
+.navbar-logo-text {
+	font-size: 1.75rem !important;
+}
+.timeline h2 { 
+	font-size:16px !important;
+}
+
+.timeline span {
+	font-size:20px !important;
+}
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.about .description {
+		font-size:14px;
+	}
+
+	.about {
+		height: 250px;
+	}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .parallax {
 	position: absolute;
 	overflow: hidden;
@@ -48,7 +109,7 @@ body {
 p {
 	font-size: 18px;
 	line-height: 1.5;
-	color: #8a8e91;
+	color: #658289;
 }
 
 h1,
@@ -923,14 +984,14 @@ footer .social-footer li:hover a {
 .navbar-logo { 
 	height: 50px !important;
 }
-@media (max-width: 991.98px) { 
+
+@media (max-width: 992px) { 
 .navbar-logo-text { 
 	margin-left: -50px;
 }
 
 .navbar-expand-lg > .container { 
-padding-right: 40px;
-    padding-left: 40px;
+	margin-right:1em;
     }
 }
 .navbar-logo-text { 
@@ -1155,6 +1216,7 @@ footer h3 {
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 	background: #fff;
+	padding:20px;
 }
 
 .downloads:hover {
@@ -1310,3 +1372,9 @@ left: 0;
 }
 
 .right-align{ right: 0; }
+
+.navbar-dark .navbar-toggler { 
+color: #658289 !important;
+}
+
+.navbar { padding: 0 !important; }

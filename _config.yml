@@ -6,6 +6,6 @@ plugins:
 
 languages: ["en", "es"]
 
-exclude_from_localizations: ["js", "img", "css", "fonts", "CNAME","scripts", "TRANSLATIONS.md"]
+exclude_from_localizations: ["js", "img", "css", "fonts", "CNAME","scripts","marketing","TRANSLATIONS.md"]
 
 coin: "Masari"

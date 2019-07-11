@@ -22,68 +22,72 @@
 	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/css/animate.css">
-	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/fonts/font-awesome/css/font-awesome.min.css"> -->
+	<!-- USING FONTAWESOME CDN AS A TEMP SOLUTION UNTIL I COPY TO LOCAL DIRECTORIES -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
 
 <div class="preloader">
-		<img src="/img/loader.gif" alt="Preloader image">
-	</div>
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container">
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        		Menu
-        		<i class="fa fa-bars"></i>
-      			</button>
-				<a class="navbar-brand js-scroll-trigger" href="/#home"><img class="navbar-logo" src="/img/logo.png" data-active-url="/img/logo.png" alt="Masari Cryptocurrency"></a>
-				<span class="navbar-logo-text"><a href="/#home">masari</a></span>
-			 <div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						
-						<a href="/es/#home">Home</a>
-						
-					</li>
-					<li class="nav-item">
-						
-						<a href="/es/#about">About</a>
-						
-					</li>
-					<li class="nav-item">
-						
-						<a href="/es/#roadmap">Roadmap</a>
-						
-					</li>
-					<li class="nav-item">
-						
-						<a href="/es/#resources">Resources</a>
-						
-					</li>
-					<li class="nav-item">
-						
-						<a href="/es/#downloads">Downloads</a>
-						
-					</li>
-					<li class="nav-item">
-						
-						<a href="/es/#research">Research</a>
-						
-					</li>
-					<li class="nav-item">
-						<div class="lang-dropdown">
-							<button class="langbtn"> Language <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
-							<div class="lang-dropdown-child">
-								<a href="/">English</a>
-								<a href="/es">Español</a>
-							</div>
+	<img src="/img/loader.gif" alt="Preloader image">
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+	<div class="container">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			Menu
+			<i class="fa fa-bars"></i>
+		</button>
+		<a class="navbar-brand js-scroll-trigger" href="/#home"><img class="navbar-logo" src="/img/logo.png" data-active-url="/img/logo.png" alt="Masari Cryptocurrency"></a>
+		<span class="navbar-logo-text"><a href="/#home">masari</a></span>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					
+					<a href="/es/#home">Home</a>
+					
+				</li>
+				<li class="nav-item">
+					
+					<a href="/es/#about">About</a>
+					
+				</li>
+				<li class="nav-item">
+					
+					<a href="/es/#roadmap">Roadmap</a>
+					
+				</li>
+				<li class="nav-item">
+					
+					<a href="/es/#resources">Resources</a>
+					
+				</li>
+				<li class="nav-item">
+					
+					<a href="/es/#downloads">Downloads</a>
+					
+				</li>
+				<li class="nav-item">
+					
+					<a href="/es/#research">Research</a>
+					
+				</li>
+				<li class="nav-item">
+					<div class="lang-dropdown">
+						<button class="langbtn"> Language <i class=" fa fa-caret-down lightblue" aria-hidden="true"></i></button>
+						<div class="lang-dropdown-child">
+							<a href="/">English</a>
+							<a href="/es">Español</a>
 						</div>
-					</li>
-				</ul>
-			</div>
+					</div>
+				</li>
+			</ul>
 		</div>
-	</nav>
+	</div>
+</nav>
+<div id="top"></div>
 
 <div id="top-area">
 	<div class="container">
@@ -199,7 +203,7 @@
 
 	<footer>
 		<div class="container">
-			<div class="row">
+			<!-- ctg disabled row until content is ready. <div class="row">
 				<div class="col-md-8">
 					<h3>Exchanges</h3>
 					<div class="col-sm-8">
@@ -211,23 +215,44 @@
 					<p>Masari subscribers get the latest news regarding releases, hot fixes and project updates emailed to their inbox. Sign up box soon.</p>
 				</div>
 
-			</div>
+			</div> -->
 			<div class="row bottom-footer text-center text-center-mobile">
 				<div class="col-sm-12">
 					<div class="col-sm-12 text-center text-center-mobile">
 						<ul class="social-footer">
-							<li><a href="https://bitcointalk.org/index.php?topic=2159114"><i class="fa fa-btc"></i></a></li>
-							<li><a href="https://www.twitter.com/masaricurrency"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="https://github.com/masari-project"><i class="fa fa-github"></i></a></li>
-							<li><a href="https://medium.com/@officialmasari"><i class="fa fa-medium"></i></a></li>
-							<li><a href="https://t.me/masaricurrency"><i class="fa fa-telegram"></i></a></li>
-							<li><a href="https://discord.gg/sMCwMqs"><i class="fab fa-discord"></i></a></li>
-<!-- Discord:  -->
-
-
-						</ul>
+	<li>
+		<a href="https://bitcointalk.org/index.php?topic=2159114">
+			<i class="fa fa-btc"></i>
+		</a>
+	</li>
+	<li>
+		<a href="https://www.twitter.com/masaricurrency">
+			<i class="fa fa-twitter"></i>
+		</a>
+	</li>
+	<li>
+		<a href="https://github.com/masari-project">
+			<i class="fa fa-github"></i>
+		</a>
+	</li>
+	<li>
+		<a href="https://medium.com/@officialmasari">
+			<i class="fa fa-medium"></i>
+		</a>
+	</li>
+	<li>
+		<a href="https://t.me/masaricurrency">
+			<i class="fa fa-telegram"></i>
+		</a>
+	</li>
+	<li>
+		<a href="https://discord.gg/sMCwMqs">
+			<i class="fab fa-discord"></i>
+		</a>
+	</li>
+</ul>
 					</div>
-					<p>&copy; 2018-2019 All Rights Reserved. The Masari Project</p>
+					<p>&copy; 2017-2019 All Rights Reserved. The Masari Project</p>
 				</div>
 			</div>
 		</div>
@@ -238,6 +263,9 @@
 		</ul>
 		<a href="#" class="close-link"><i class="arrow_up"></i></a>
 	</div>
+
+	<!-- lets get to the top -->
+	<a href="#home" class="top-button hidden"><i class="fas fa-chevron-up"></i><p>Top</p></a>
 	<!-- Scripts -->
 	<script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>

@@ -12,6 +12,7 @@ navigation:
   resources: "Resources"
   research: "Research"
   language: "Language"
+
 sections:
   about:
     heading: "About Masari"
@@ -44,6 +45,7 @@ sections:
     heading: "Downloads"
     paragraph: "Release files and wallets from the Masari team"
     version: "Current version"
+
 language:
   en: "English"
   es: "Español"

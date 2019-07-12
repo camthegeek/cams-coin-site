@@ -8,7 +8,7 @@ releases:
   sha256: "d9c817261437eca6102acc4cab0ff5aa7492539f9d883c13dea945a5de74772e"
 
 - type: "CLI"
-  version: "0.3.1.1"
+  version: "0.3.1.2"
   codename: "Dandy Dromedary"
-  url: "https://github.com/masari-project/masari/releases/download/v0.3.1.1/masari-mac-x64-v0.3.1.1.zip"
-  sha256: "aec18e1fdd32c3c72bd2486c92ba0e394e47c455dab31ac58fb1ac87195817b2 "
+  url: "https://github.com/masari-project/masari/releases/download/v0.3.1.2/masari-mac-x64-v0.3.1.2.zip"
+  sha256: "df95715817b6e2b92c157ff65bc94f7a1abf01085e12bf6166675800ba4373ef"

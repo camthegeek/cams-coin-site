@@ -62,7 +62,7 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 							{% endcase %}
 						{% endfor %}
 
-						<a class="download masari btn-primary btn-lg" data-win-dl="{{ corewin }}" data-win-dl-ver="v{{ coreVerWin }}" data-linux-dl="{{ corelin }}" data-linux-dl-ver="v{{ coreVerLinux }}" data-android-dl="{{ coredroid }}" data-android-dl-ver="v{{ coreVerAndroid }}" data-mac-dl="{{ coremac }}" data-mac-dl-ver="v{{ coreVerMac }}">
+						<a id="downloadbutton" class="download masari btn-primary btn-lg" data-win-dl="{{ corewin }}" data-win-dl-ver="v{{ coreVerWin }}" data-linux-dl="{{ corelin }}" data-linux-dl-ver="v{{ coreVerLinux }}" data-android-dl="{{ coredroid }}" data-android-dl-ver="v{{ coreVerAndroid }}" data-mac-dl="{{ coremac }}" data-mac-dl-ver="v{{ coreVerMac }}" href="#downloads">
 							{% capture download %}
 								{% t banner.download %}
 							{% endcapture %}

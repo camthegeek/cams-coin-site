@@ -9,7 +9,7 @@ body {
 }
 
 /* Smart phones / small devices (landscape/portrait) */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.about .description { 
 		font-size: 16px;
 	}
@@ -31,6 +31,10 @@ body {
 
 	.timeline span {
 		font-size:20px !important;
+	}
+	.download:active, .download:visited, .download { 
+		color: #fff;
+		padding:15px;
 	}
 }
 

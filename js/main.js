@@ -50,6 +50,7 @@ $(function() {
 	$(window).resize(function() {
 		$('header').height($(window).height());
 	});
+
 	// scroll to top
 	$('body').on('click', '.top-button', function(e) {
 		var target = $('#top');
@@ -58,6 +59,7 @@ $(function() {
 					scrollTop: target.offset().top
 				}, 1000);
 	});
+
 	// Mobile Nav
 	$('body').on('click', 'nav .navbar-toggle', function() {
 		event.stopPropagation();
@@ -136,11 +138,11 @@ $(function() {
   		break;
 
   		case 'iPhone':
-  			dl = "#downloads";
+  			dl = $('.download').data('dl-default');
   		break;
 
   		case 'iPad': 
-  			dl = "#downloads";
+  			document.getElementbyId("downloadbutton").href = "/#downloads";
   		break;
 
   		case 'MacIntel':
@@ -154,9 +156,24 @@ $(function() {
   			dl = '#downloads';
   		break;
   	}	
-
   	$('.opsys').text(opsys);
   	$('.dlversion').text(ver);
-  	$('.download').attr('href',dl);
+  	$('.download').attr('href', dl);
   	$('.download-btn-logo').addClass('fa-'+opsys.toLowerCase());
+
+	//ripped from https://stackoverflow.com/a/10364620/8435790
+
+	var isMobile = window.matchMedia("max-device-width:480px").matches;
+
+    if (isMobile) {
+    	$('.download').text('it was a match!');
+        $('body').on('click', '.download', function(e) {
+		var target = $('#downloads');
+		e.preventDefault();
+		$('html,body').animate({
+					scrollTop: target.offset().top
+				}, 1000);
+	});
+
+    }
 });

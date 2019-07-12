@@ -1,20 +1,18 @@
-// --------------------------------------------------------
-//	Language Dropdown
-// -------------------------------------------------------- 
 $(function() {
+	console.log('hello world');
 	var ratio = 2;
 	// Preloader
-		$('.preloader').addClass('animated fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-			$('.preloader').hide();
-		});
+	$('.preloader').addClass('animated fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+		$('.preloader').hide();
+	});
 
-		$('header').height($(window).height() + 80);
-		$('section .cut').each(function() {
-			if ($(this).hasClass('cut-top'))
-				$(this).css('border-right-width', $(this).parent().width() + "px");
-			else if ($(this).hasClass('cut-bottom'))
-				$(this).css('border-left-width', $(this).parent().width() + "px");
-		});
+	$('header').height($(window).height() + 80);
+	$('section .cut').each(function() {
+		if ($(this).hasClass('cut-top'))
+			$(this).css('border-right-width', $(this).parent().width() + "px");
+		else if ($(this).hasClass('cut-bottom'))
+			$(this).css('border-left-width', $(this).parent().width() + "px");
+	});
 
 		// Navbar Init
 		$('nav').addClass('original').clone().insertAfter('nav').addClass('navbar-fixed-top').css('position', 'fixed').css('top', '0').css('margin-top', '0').removeClass('original');
@@ -56,8 +54,8 @@ $(function() {
 		var target = $('#top');
 		e.preventDefault();
 		$('html,body').animate({
-					scrollTop: target.offset().top
-				}, 1000);
+			scrollTop: target.offset().top
+		}, 1000);
 	});
 
 	// Mobile Nav
@@ -102,78 +100,71 @@ $(function() {
 		}
 	});
 
-
 	$('body').on("click", ".langbtn", function(e){
-    	$('.lang-dropdown-child').addClass('show-child');
-    	e.stopPropagation();
+		$('.lang-dropdown-child').addClass('show-child');
+		e.stopPropagation();
 	})
 	$('body').click(function(){
-    	$('.lang-dropdown-child').removeClass('show-child');
-  	});
-  	var opsys = "";
-  	var dl = "";
-  	var infoLine = navigator.appVersion;
-  	var os = navigator.platform;
-
-  	switch (os) { 
-  		case 'Win32':
-  			opsys = "Windows"
-  			dl = $('.download').data('win-dl');
-  			ver = $('.download').data('win-dl-ver');
-  			$('.for-text').removeClass('hidden');
-  		break;
-
-  		case 'Android':
-  			opsys = "Android"
-  			dl = $('.download').data('android-dl');
-  			ver = $('.download').data('android-dl-ver');
-  			$('.for-text').removeClass('hidden');
-  		break;
-
-  		case 'Linux x86_64': 
-  			opsys = "Linux";
-  			dl = $('.download').data('linux-dl');
-  			ver = $('.download').data('linux-dl-ver');
-  			$('.for-text').removeClass('hidden');
-  		break;
-
-  		case 'iPhone':
-  			dl = $('.download').data('dl-default');
-  		break;
-
-  		case 'iPad': 
-  			document.getElementbyId("downloadbutton").href = "/#downloads";
-  		break;
-
-  		case 'MacIntel':
-  			opsys = 'Mac OS';
-  			dl = $('.download').data('mac-dl');
-  			ver = $('.download').data('mac-dl-ver');
-  			$('.for-text').removeClass('hidden');
-  		break;
-  		
-  		default:
-  			dl = '#downloads';
-  		break;
-  	}	
-  	$('.opsys').text(opsys);
-  	$('.dlversion').text(ver);
-  	$('.download').attr('href', dl);
-  	$('.download-btn-logo').addClass('fa-'+opsys.toLowerCase());
-
-	//ripped from https://stackoverflow.com/a/10364620/8435790
-
-	var isMobile = window.matchMedia("max-device-width:480px").matches;
-
-    if (isMobile) {
-    	$('.download').text('it was a match!');
-        $('body').on('click', '.download', function(e) {
-		var target = $('#downloads');
-		e.preventDefault();
-		$('html,body').animate({
-					scrollTop: target.offset().top
-				}, 1000);
+		$('.lang-dropdown-child').removeClass('show-child');
 	});
+	var opsys = "";
+	var dl = "";
+	var infoLine = navigator.appVersion;
+	var os = navigator.platform;
+	var ver = "";
 
-    }
+	switch (os) { 
+		case 'Win32':
+			opsys = "Windows"
+			dl = $('.download').data('win-dl');
+			ver = $('.download').data('win-dl-ver');
+			$('.for-text').removeClass('hidden');
+		break;
+
+		case 'Android':
+			opsys = "Android"
+			dl = $('.download').data('android-dl');
+			ver = $('.download').data('android-dl-ver');
+			$('.for-text').removeClass('hidden');
+		break;
+
+		case 'Linux x86_64': 
+			opsys = "Linux";
+			dl = $('.download').data('linux-dl');
+			ver = $('.download').data('linux-dl-ver');
+			$('.for-text').removeClass('hidden');
+		break;
+
+		case 'MacIntel':
+			opsys = 'Mac OS';
+			dl = $('.download').data('mac-dl');
+			ver = $('.download').data('mac-dl-ver');
+			$('.for-text').removeClass('hidden');
+		break;
+
+		default:
+			dl = '#downloads';
+		break;
+	}
+	if (opsys) { 
+		$('.opsys').text(opsys);
+	}
+	if (ver) { 
+		$('.dlversion').text(ver);
+	}
+	$('.download').attr('href', dl);
+	$('.download-btn-logo').addClass('fa-'+opsys.toLowerCase());
+	
+	console.log(os);
+	var isMobile = !!navigator.platform && /iPhone|iPad|iPod|Android/.test(navigator.platform);
+
+	if (isMobile) {
+		$('body').on('click touch', '.download', function(e) {
+			var target = $('#downloads');
+			e.preventDefault();
+			$('html,body').animate({
+				scrollTop: target.offset().top
+			}, 1000);
+		});
+	}
 });

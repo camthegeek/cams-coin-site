@@ -233,13 +233,13 @@ description: '{{ site.translations[page.lang].seo.meta.main.desc }}'
 							<a href="{{ release.url }}" target="_blank">{{ opsys.system }} Graphical User Interface (GUI)</a></p>						
 							<p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
 						</p>
-						{% if release.sha256 %} Official SHA256 Hash: <pre>{{ release.sha256 }}</pre> {% endif %}
+						{% if release.sha256 != "" %} Official SHA256 Hash: <pre>{{ release.sha256 }}</pre> {% endif %}
 					{% endif %}
 					{% if release.type contains "CLI" %}
 							<p><a href="{{ release.url }}" target="_blank">{{ opsys.system }} Command Line Interface (CLI)</a></p>
 							<p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
 						</p>
-						{% if release.sha256 %} Official SHA256 Hash: <pre>{{ release.sha256 }}</pre> {% endif %}
+						{% if release.sha256 != "" %} Official SHA256 Hash: <pre>{{ release.sha256 }}</pre> {% endif %}
 					{% endif %}
 					{% if release.type contains "Play" %}
 						<a href="{{ release.url }}" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width=50% alt="{% t seo.images.android %}"></a><p>{% t sections.downloads.version %}: {{ release.version }} {{ release.codename }}
